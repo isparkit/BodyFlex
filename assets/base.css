@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400..800&display=swap');
+ 
 :root {
   --alpha-button-background: 1;
   --alpha-button-border: 1;
@@ -259,7 +261,8 @@ h5,
 .h3,
 .h4,
 .h5 {
-  font-family: var(--font-heading-family);
+  /* font-family: var(--font-heading-family); */
+  font-family: "Baloo Tamma 2", system-ui;
   font-style: var(--font-heading-style);
   font-weight: var(--font-heading-weight);
   letter-spacing: calc(var(--font-heading-scale) * 0.06rem);
@@ -336,7 +339,8 @@ h3,
 
 h4,
 .h4 {
-  font-family: var(--font-heading-family);
+  /* font-family: var(--font-heading-family); */
+  font-family: "Baloo Tamma 2", system-ui;
   font-style: var(--font-heading-style);
   font-size: calc(var(--font-heading-scale) * 1.5rem);
 }
@@ -3686,4 +3690,42 @@ details-disclosure > details {
 
 .footer__content-bottom {
   border-top: 0 !important;
+}
+
+
+h1,
+.h1 {
+  font-size: clamp(28px, 2.5vw + 20px, 60px);
+}
+ 
+h2,
+.h2 {
+  font-size: clamp(24px, 1.8vw + 20px, 48px);
+}
+ 
+h4,
+.h4 {
+  font-size: clamp(20px, 0.45vw + 20px, 28px);
+}
+ 
+h5,
+.h5 {
+  font-size: clamp(18px, 0.45vw + 18px, 24px);
+}
+ 
+h6,
+.h6 {
+  font-size: clamp(18px, 0.3vw + 18px, 22px);
+}
+p,
+.p {
+  font-size: clamp(14px, 0.3vw + 13px, 18px) !important;
+}
+
+.btn-arrow {
+  display: flex;
+  width: auto;
+  align-items: center;
+  max-width: max-content;
+  gap: 5px;
 }
