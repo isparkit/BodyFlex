@@ -1,0 +1,511 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Slip for smerter – bevæg dig frit igen med BodyFlex™",
+            "heading_size": "h1"
+          }
+        },
+        "text_pWgjhX": {
+          "type": "text",
+          "settings": {
+            "text": "Den innovative løsning, der lindrer muskelspændinger og giver dig friheden tilbage. Oplev forskellen i dag!",
+            "text_style": "body"
+          }
+        },
+        "button": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Køb BodyFlex her",
+            "button_link_1": "shopify://products/bodyflex-pilates-reformer",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text_pWgjhX",
+        "button"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Bodyflex_produktvideo2_1x1-ezgif.com-optimize_1.gif",
+        "image_overlay_opacity": 50,
+        "image_height": "adapt",
+        "desktop_content_position": "top-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-a68195e1-41cc-49d6-b374-f54a48d160a2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "ss_feature_1_gWG8Ce": {
+      "type": "ss-feature-1",
+      "blocks": {
+        "image_hFM7YQ": {
+          "type": "image",
+          "settings": {
+            "feature_title": "Hurtig levering på 1-3 dage",
+            "feature_text": "",
+            "feature_image": "shopify://shop_images/icon1-2.webp",
+            "feature_url": "",
+            "hide_image": false
+          }
+        },
+        "image_pLDYDr": {
+          "type": "image",
+          "settings": {
+            "feature_title": "Altid sikker checkout",
+            "feature_text": "",
+            "feature_image": "shopify://shop_images/icon2-3.png",
+            "feature_url": "",
+            "hide_image": false
+          }
+        },
+        "image_WLfGk9": {
+          "type": "image",
+          "settings": {
+            "feature_title": "Dansk virksomhed",
+            "feature_text": "",
+            "feature_image": "shopify://shop_images/icon3-2.webp",
+            "feature_url": "",
+            "hide_image": false
+          }
+        }
+      },
+      "block_order": [
+        "image_hFM7YQ",
+        "image_pLDYDr",
+        "image_WLfGk9"
+      ],
+      "settings": {
+        "feature_row": 3,
+        "feature_row_mobile": 3,
+        "feature_gap": 20,
+        "feature_gap_mobile": 20,
+        "feature_padding_horizontal": 0,
+        "feature_padding_vertical": 0,
+        "feature_radius": 16,
+        "feature_border_thickness": 0,
+        "feature_shadow": false,
+        "feature_heading_custom": true,
+        "feature_heading_font": "montserrat_n4",
+        "feature_heading_size": 12,
+        "feature_heading_size_mobile": 10,
+        "feature_heading_height": 120,
+        "feature_heading_mt": 10,
+        "feature_text_custom": false,
+        "feature_text_font": "josefin_sans_n4",
+        "feature_text_size": 12,
+        "feature_text_size_mobile": 12,
+        "feature_text_height": 130,
+        "feature_text_mt": 4,
+        "feature_icon_size": 32,
+        "feature_icon_size_mobile": 24,
+        "feature_bg": "#fafafa",
+        "feature_border_color": "#000000",
+        "feature_shadow_color": "#000000",
+        "feature_heading_color": "#000000",
+        "feature_text_color": "#000000",
+        "feature_icon_color": "#000000",
+        "background_color": "#fafafa",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 24,
+        "padding_bottom": 24,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "full_width": false,
+        "content_width": 120,
+        "border_thickness": 0,
+        "lazy": true
+      }
+    },
+    "image_with_text_Ud4GMw": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_9rHUK7": {
+          "type": "heading",
+          "settings": {
+            "heading": "Lad ikke smerterne holde dig tilbage",
+            "heading_size": "h2"
+          }
+        },
+        "text_734wXQ": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Er du træt af konstante muskelspændinger, smerter og stivhed i kroppen? BodyFlex™ er udviklet til at hjælpe dig med at bevæge dig frit igen – uden begrænsninger. Vores ergonomiske design kombinerer teknologi og komfort for at give øjeblikkelig lindring og forbedre din mobilitet. Tag kontrollen over din krop tilbage, og lev det liv, du fortjener!</p>",
+            "text_style": "body"
+          }
+        },
+        "button_6pkk47": {
+          "type": "button",
+          "settings": {
+            "button_label": "Køb BodyFlex her",
+            "button_link": "shopify://products/bodyflex-pilates-reformer",
+            "button_style_secondary": false
+          }
+        },
+        "liquid_UzXdrA": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<style>\n  /* Styling for the footer section */\n  .footer-section-abc123 {\n    display: flex;\n    flex-direction: column;\n    align-items: center; /* Keep the payment icons centered */\n    margin-top: -10px; /* Adjusted for alignment */\n  }\n\n  /* Styling for the payment icons list */\n  .payment-icons-xyz789 {\n    list-style-type: none;\n    display: flex;\n    gap: 5px; /* Added gap between payment icons */\n    padding: 0;\n    margin-top: 30px;  /* Increased margin-top to move payment icons further down */\n    justify-content: center; /* Keep payment icons centered */\n  }\n\n  /* Styling for Trustpilot section */\n  .trustpilot-logo {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    gap: 6px; /* Space between elements */\n    margin-top: -10px;\n    width: 100%;\n  }\n\n  /* \"Fremragende\" text */\n  .trustpilot-text {\n    font-size: 14px;\n    font-weight: normal;\n    color: black;\n    line-height: 1;\n    text-align: center;\n  }\n\n  /* Trustpilot 4.5 stars */\n  .trustpilot-stars {\n    width: 100px; /* Adjusted size */\n    height: auto;\n    display: block;\n  }\n\n  /* Trustpilot logo */\n  .trustpilot-logo img {\n    display: block;\n    height: auto;\n  }\n\n  /* One-star Trustpilot logo */\n  .trustpilot-one-star {\n    width: 70px; /* Adjusted size */\n  }\n\n  /* Remove underline from the link */\n  a {\n    text-decoration: none;\n  }\n\n  /* Adjustments for smaller screens */\n  @media screen and (max-width: 900px) {\n    .trustpilot-logo {\n      gap: 4px; /* Reduce space between elements */\n    }\n\n    .trustpilot-text {\n      font-size: 12px; /* Smaller text */\n    }\n\n    .trustpilot-stars {\n      width: 90px; /* Smaller stars */\n    }\n\n    .trustpilot-one-star {\n      width: 55px; /* Increased size for mobile */\n    }\n  }\n</style>\n\n<!-- Wrap the entire content in a clickable anchor tag -->\n<a href=\"https://dk.trustpilot.com/review/bodyflex.dk\" target=\"_blank\">\n  <div class=\"footer-section-abc123\">\n    <!-- Payment Icons Section -->\n    <ul class=\"inline-list payment-icons-xyz789\">\n      {% assign enabled_payment_types = 'mobilepay,visa,dankort,master,anyday,google_pay,apple_pay,paypal,' | remove: ' ' | split: ',' %}\n      {% for type in enabled_payment_types %}\n        <li class=\"icon--payment-pqr456\">\n          {{ type | payment_type_svg_tag }}\n        </li>\n      {% endfor %}\n    </ul>\n\n    <!-- Trustpilot Logo, \"Fremragende\" Text, and Stars Section -->\n    <div class=\"trustpilot-logo\">\n      <span class=\"trustpilot-text\">Fremragende</span>\n\n      <!-- Clickable 4.5 Stars -->\n      <a href=\"https://dk.trustpilot.com/review/bodyflex.dk\" target=\"_blank\">\n        <img class=\"trustpilot-stars\" src=\"https://cdn.trustpilot.net/brand-assets/4.1.0/stars/stars-4.5.svg\" alt=\"Trustpilot 4.5 stars\">\n      </a>\n\n      <!-- Clickable One-Star Trustpilot Logo -->\n      <a href=\"https://dk.trustpilot.com/review/bodyflex.dk\" target=\"_blank\">\n        <img class=\"trustpilot-one-star\" src=\"https://1000logos.net/wp-content/uploads/2022/10/Trustpilot-Logo-500x281.png\" alt=\"Trustpilot logo\">\n      </a>\n    </div>\n\n    <!-- Description Tabs Section -->\n    <div class=\"description-tabs\">\n      <!-- Your description tabs code goes here -->\n    </div>\n  </div>\n</a>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_9rHUK7",
+        "text_734wXQ",
+        "button_6pkk47",
+        "liquid_UzXdrA"
+      ],
+      "custom_css": [],
+      "settings": {
+        "image": "shopify://shop_images/2.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "scheme-5b984ec2-455e-45c7-9f24-c8011d1ccbca",
+        "color_scheme": "scheme-5b984ec2-455e-45c7-9f24-c8011d1ccbca",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_U644E8": {
+      "type": "image-with-text",
+      "blocks": {
+        "liquid_kztwc7": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<style>\n  .random-full-section-uvw901 {\n    display: flex;\n    width: 100%;\n    align-items: center;\n    justify-content: flex-start;\n    background-color: none;\n    padding: 0;\n    margin-top: 0px;\n    margin-bottom: -12px;\n  }\n\n  .random-full-section-uvw901 img {\n    width: 16%;\n  }\n\n  .random-full-text-xyz234 {\n    font-size: 12px;\n    font-weight: 500;\n    margin-left: 6px;\n    text-align: left;\n    color: black; /* Ensures text appears in normal black color */\n  }\n\n  /* Remove underline and default link color */\n  a {\n    text-decoration: none;\n    color: inherit;\n  }\n</style>\n\n<a href=\"https://dk.trustpilot.com/review/bodyflex.dk\" target=\"_blank\">\n  <section class=\"random-full-section-uvw901\">\n    <img src=\"https://cdn.trustpilot.net/brand-assets/4.1.0/stars/stars-4.5.svg\" alt=\"Trustpilot stars\">\n    <div class=\"random-full-text-xyz234\">Fremragende</div>\n  </section>\n</a>"
+          }
+        },
+        "heading_DJfEDC": {
+          "type": "heading",
+          "settings": {
+            "heading": "Hvorfor vælge BodyFlex™?",
+            "heading_size": "h2"
+          }
+        },
+        "text_GPfbDW": {
+          "type": "text",
+          "settings": {
+            "text": "<ul><li>Hurtig smertelindring på få minutter.</li><li>Ergonomisk design, der tilpasser sig din krop.</li><li>Let og bærbar – brug den hvor som helst.</li><li>Bygget på avanceret teknologi for maksimal effekt.</li></ul><p>Muskelspændinger og stivhed kan påvirke dit humør, din energi og din livskvalitet. BodyFlex™ er din partner i kampen mod smerter – designet til at løsne spændinger, øge blodcirkulationen og give dig mere bevægelsesfrihed. Oplev en løsning, der virker, hver gang.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_LmbR6A": {
+          "type": "button",
+          "settings": {
+            "button_label": "Køb BodyFlex her",
+            "button_link": "shopify://products/bodyflex-pilates-reformer",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "liquid_kztwc7",
+        "heading_DJfEDC",
+        "text_GPfbDW",
+        "button_LmbR6A"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/3.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "scheme-1",
+        "color_scheme": "scheme-5",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 0,
+        "padding_bottom": 32
+      }
+    },
+    "ss_testimonial_8_x6CAzt": {
+      "type": "ss-testimonial-8",
+      "blocks": {
+        "slide_XxCtiM": {
+          "type": "slide",
+          "settings": {
+            "stars_count": 5,
+            "heading": "Super godt produkt",
+            "text": "Jeg har brugt den i 2 uger nu og jeg kan virkelig mærke forskellen, jeg er blevet mere smidig i kroppen og den har øget min mobilitet. Kan helt klart anbefale den. 😊",
+            "author_date": "Kristina V."
+          }
+        },
+        "slide_hXHfEV": {
+          "type": "slide",
+          "settings": {
+            "stars_count": 5,
+            "heading": "Genialt produkt",
+            "text": "Den fylder næsten ingenting og klappes nemt sammen igen efter brug. Jeg føler mig langt mere smidig og tilpas i min egen krop efter jeg er begyndt at inkludere den i min morgen rutine.",
+            "author_date": "Alex F."
+          }
+        },
+        "slide_6aChg4": {
+          "type": "slide",
+          "settings": {
+            "stars_count": 5,
+            "heading": "Virkelig godt produkt",
+            "text": "Jeg har indtil videre brugt min hver dag og mine rygsmerter er allerede mindsket. Hurtig levering modtog min dagen efter jeg havde bestilt.",
+            "author_date": "Josephine O."
+          }
+        },
+        "slide_nW4kfx": {
+          "type": "slide",
+          "settings": {
+            "stars_count": 5,
+            "heading": "Jeg har haft Bodyflex Pilates Reformer i et par uger nu",
+            "text": "Efter et par ugers brug er mine muskelspændinger og min stivhed nærmest forsvundet. Varm anbefaling herfra.",
+            "author_date": "Casper N."
+          }
+        },
+        "slide_hKtK98": {
+          "type": "slide",
+          "settings": {
+            "stars_count": 5,
+            "heading": "Fantastisk service og kvalitet!",
+            "text": "Jeg har haft en rigtig god oplevelse med Bodyflex.dk! Lynhurtig levering, og BodyFlex Pilates Reformer lever fuldt ud op til forventningerne og er super god kvalitet.",
+            "author_date": "Ismail K."
+          }
+        }
+      },
+      "block_order": [
+        "slide_XxCtiM",
+        "slide_hXHfEV",
+        "slide_6aChg4",
+        "slide_nW4kfx",
+        "slide_hKtK98"
+      ],
+      "settings": {
+        "heading": "Se hvad andre siger om BodyFlex",
+        "heading_custom": false,
+        "heading_font": "josefin_sans_n4",
+        "heading_size": 26,
+        "heading_size_mobile": 18,
+        "heading_height": 130,
+        "heading_align": "center",
+        "rating_text": "Fremragende",
+        "rating_text_custom": false,
+        "rating_text_font": "josefin_sans_n4",
+        "rating_text_size": 16,
+        "rating_text_size_mobile": 14,
+        "rating_text_height": 130,
+        "rating_text_mt": 16,
+        "rating": 4.7,
+        "rating_hide": true,
+        "rating_text_hide": false,
+        "rating_align": "center",
+        "stars_count": 4.5,
+        "stars_size": 20,
+        "stars_size_mobile": 18,
+        "stars_align": "center",
+        "text": "",
+        "text_custom": false,
+        "text_font": "josefin_sans_n4",
+        "text_size": 20,
+        "text_size_mobile": 16,
+        "text_height": 130,
+        "text_align": "center",
+        "text_mt": 16,
+        "slider_width": 80,
+        "slider_view": 3,
+        "slider_view_mobile": 1.2,
+        "slider_gap": 20,
+        "slider_gap_mobile": 20,
+        "slider_mt": 36,
+        "card_padding_vertical": 32,
+        "card_padding_vertical_mobile": 24,
+        "card_padding_horizontal": 40,
+        "card_padding_horizontal_mobile": 24,
+        "card_radius": 16,
+        "card_border_thickness": 0,
+        "card_shadow": true,
+        "card_heading_custom": true,
+        "card_heading_font": "montserrat_n5",
+        "card_heading_size": 18,
+        "card_heading_size_mobile": 16,
+        "card_heading_height": 130,
+        "card_heading_align": "center",
+        "card_heading_mt": 16,
+        "card_text_custom": true,
+        "card_text_font": "open_sans_n3",
+        "card_text_size": 12,
+        "card_text_size_mobile": 12,
+        "card_text_height": 150,
+        "card_text_align": "center",
+        "card_text_mt": 16,
+        "card_text_more": "Se mere",
+        "card_text_less": "Se mindre",
+        "card_count_words": 20,
+        "card_author_date_text_custom": false,
+        "card_author_date_text_font": "josefin_sans_n4",
+        "card_author_date_text_size": 14,
+        "card_author_date_text_size_mobile": 14,
+        "card_author_date_text_height": 130,
+        "card_author_date_text_align": "center",
+        "card_author_date_text_mt": 16,
+        "arrow_size": 50,
+        "arrow_size_mobile": 50,
+        "arrow_icon_size": 28,
+        "arrow_icon_size_mobile": 28,
+        "arrow_border_thickness": 0,
+        "arrow_show_desktop": true,
+        "arrow_show_mobile": false,
+        "dots_size": 12,
+        "dots_size_mobile": 12,
+        "dots_show_desktop": false,
+        "dots_show_mobile": false,
+        "button": "",
+        "button_url": "",
+        "button_custom": false,
+        "button_font": "josefin_sans_n4",
+        "button_size": 16,
+        "button_size_mobile": 14,
+        "button_height": 100,
+        "button_align": "center",
+        "button_mt": 16,
+        "button_padding_vertical": 20,
+        "button_padding_horizontal": 16,
+        "button_radius": 8,
+        "button_border_thickness": 0,
+        "button_color": "#ffffff",
+        "button_hover_color": "#ffffff",
+        "button_bg_color": "#000000",
+        "button_bg_hover_color": "#000000",
+        "button_border_color": "#000000",
+        "button_border_hover_color": "#000000",
+        "card_bg_color": "#ffffff",
+        "card_border_color": "#000000",
+        "card_shadow_color": "#1a1a1a",
+        "card_heading_color": "#000000",
+        "card_text_color": "#000000",
+        "card_author_date_text_color": "#000000",
+        "arrow_color": "#000000",
+        "arrow_hover_color": "#000000",
+        "arrow_bg_color": "#ffffff",
+        "arrow_bg_hover_color": "#ffffff",
+        "arrow_border_color": "#ffffff",
+        "arrow_border_hover_color": "#ffffff",
+        "dots_color": "#000000",
+        "heading_color": "#000000",
+        "rating_text_color": "#000000",
+        "stars_bg_color": "#00b67a",
+        "stars_color": "#ffffff",
+        "text_color": "#000000",
+        "background_color": "#ffffff",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "full_width": true,
+        "content_width": 120,
+        "border_thickness": 0,
+        "lazy": true
+      }
+    },
+    "collapsible_content_aAGa4q": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_Vmhmhj": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Hvor lang er leveringstiden?",
+            "icon": "none",
+            "row_content": "<p>Vi tilbyder hurtig levering på kun <strong>1-3 hverdage</strong>, så du hurtigt kan få glæde af din nye BodyFlex Pilates Reformer.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_H7NfbP": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Er der fragt på min ordre?",
+            "icon": "none",
+            "row_content": "<p>Fragten på vores shop er gratis med levering til nærmeste pakkeshop.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_7HkcVh": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Hvad er jeres tilfredshedsgaranti?",
+            "icon": "none",
+            "row_content": "<p>Vi tilbyder en <strong>30 dages tilfredshedsgaranti</strong>. Det betyder, at du kan teste din nye BodyFlex Pilates Reformer derhjemme i 30 dage. Hvis du ikke er tilfreds, kan du returnere produktet og få dine penge tilbage – uden besvær.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_EnrDzM": {
+          "type": "collapsible_row",
+          "disabled": true,
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_Vmhmhj",
+        "collapsible_row_H7NfbP",
+        "collapsible_row_7HkcVh",
+        "collapsible_row_EnrDzM"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "Ofte stillede spørgsmål",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "image_banner",
+    "ss_feature_1_gWG8Ce",
+    "image_with_text_Ud4GMw",
+    "image_with_text_U644E8",
+    "ss_testimonial_8_x6CAzt",
+    "collapsible_content_aAGa4q"
+  ]
+}

@@ -1,0 +1,489 @@
+<style>
+  .comparison_table_container, .right_side_wrapper {
+    display: flex;
+    gap: 5px;
+  }
+  .comparison_table_container svg {
+    width: 20px;
+    height: 20px;
+  }
+  .left_side_container{
+    width: 30%;
+  }
+  .right_side_container {
+    width: 100%;
+    max-width: 610px;
+}
+.left_side_container a {
+  text-decoration: none;
+  color: {{ section.settings.button_text_color }};
+  background-color: transparent;
+  padding: 10px 20px;
+  border: 1px solid {{ section.settings.button_border_color }}; 
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+  margin: 10px auto;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.left_side_container a:hover {
+  background-color: {{ section.settings.button_border_color }}; 
+  color: #FFFFFF; 
+}
+  .comparison_section, .width-20\%.bg_color {
+    background: white;
+  }
+  .right_side_wrapper {
+    text-align: center;
+  }
+  .right_side_wrapper > div {
+    padding: 20px 15px;
+  }
+  .right_side_wrapper p {
+    text-align: start;
+}
+  .width-20\%.bg_color svg {
+    position: relative;
+    z-index: 1;
+  }
+  .right_side_container {
+    background: #F3F3F3;
+    border: 1px solid #00000012;
+    box-shadow: -3px 7px 9px -2px #a09c9c;
+    border-radius: 6px;
+    justify-content: left;
+    border-radius: 24px;
+  }
+.right_side_container>div:first-child {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    height: 60px;
+}
+  .width-20\%.bg_color.margindiv.hide_on_mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  .width-60\% {
+    width: 70%;
+  }
+  .width-20\% {
+    width: 25%;
+  }
+  .left_side_container p {
+    margin: 4px 0;
+    padding: 0px 0 10px 0px;
+  }
+  .left_side_container h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;
+  }
+  .right_side_wrapper h3 {
+    margin: 0;
+    z-index: 3;
+    position: relative;
+  }
+  .right_side_wrapper {
+    text-align: center;
+  }
+  .right_side_wrapper:not(.right_side_wrapper:last-child) {
+    border-bottom: 1px solid #fffbfb3d;
+  }
+  .comparison_section p {
+    margin: 0;
+    text-align: center;
+  }
+  .width-20\%.bg_color {
+    position: relative;
+    background-color: {{ settings.brand_tab_bg_color }};
+    color: {{ settings.tab_text_color }};
+  }
+  .width-20\%.bg_color.right_side_wrapperr {
+    background-color: {{ settings.other_tab_bg_color }};
+    color: {{ settings.tab_text_color }};
+  }
+  .left_side_container a {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    width: 120px;
+  }
+   .right_side_wrapper:last-child .width-20\%.bg_color:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -28%;
+    height: 100%;
+    width: 100%;
+    background: #FFFFFF;
+    z-index: 0;
+    border-top: 1px solid #8080803d;
+    border-radius: 7px;
+  }
+  .right_side_wrapper:last-child .width-20\%.bg_color:after {
+    bottom: -28%;
+    top: initial;
+    border-top: initial;
+    border-bottom: 1px solid #8080803d;
+  }
+  .margindiv {
+    height: calc(100% + 30px);
+    margin-top: -30px;
+    box-shadow: -1px -1px 6px -1px #00000030;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+  .width-20\%.bg_color img {
+    width: 100%;
+    height: auto;
+    z-index: 3;
+    position: relative;
+  }
+  .width-20\%.bg_color.loop-5:before, .width-20\%.bg_color.loop-2:before {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    border: 1px solid #c1c1c17a;
+    border-radius: 5px;
+  }
+  .width-20\%.bg_color.loop-2:before {
+    top: -20px;
+  }
+  .width-20\%.bg_color.loop-5:before {
+    bottom: -20px;
+  }
+  .right_side_wrapper p {
+  }
+  .width-20\%.width_smaller_icon svg {
+    width: 17px;
+  }
+  .right_side_wrapperr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .left_side_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .right_side_wrapper>div:nth-child(2) {
+    padding: 0px;
+}
+  body .margindiv img {
+    width: 100px !important;
+    object-fit: contain;
+}
+  .width-20\%.bg_color.margindiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  .comparison_table_container {
+    justify-content: space-between;
+}
+@media screen and (max-width: 750px) {
+  .right_side_wrapper p {
+    font-size: 14px;
+    -webkit-text-stroke: 0.59px !important;
+    font-weight: 0 important;
+  }
+}
+  @media screen and (min-width: 750px) {
+    .width-20\%.bg_color.hode_on_descktop {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 750px) {
+    .width-20\%.bg_color.hode_on_descktop img {
+      width: 100%;
+      max-width: 70px;
+      margin: auto;
+    }
+    .comparison_table_container {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .left_side_container, .right_side_container {
+      width: 100%;
+    }
+    .right_side_wrapper p {
+      font-size: 14px;
+       -webkit-text-stroke: 0.59px !important;
+    font-weight: 0 important;
+    }
+    .left_side_container {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .width-20\%.bg_color.hide_on_mobile {
+      display: none;
+    }
+    .right_side_wrapper > div {
+    padding: 20px 10px;
+}
+    .width-20\% {
+    width: 47%;
+}
+    .width-20\%.bg_color.hode_on_descktop {
+    padding: 6px 0;
+}
+    .right_side_container {
+    width: 80%;
+    max-width: 100%;
+      margin: 0 auto;
+}
+   
+  }
+
+  @media only screen and (max-width:399px){
+    body .margindiv img {
+    width: 100% !important;
+    object-fit: contain;
+    padding: 10px;
+}
+  }
+</style>
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    background-color: {{ section.settings.comparison_bg_color }}
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="comparison_section section-{{ section.id }}-padding">
+<div class="page-width">
+<div class="comparison_table_container">
+ <div class="left_side_container">
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'left_column' %}
+          <h2 style="color: {{ block.settings.text_color }}; font-size: {{ block.settings.text_size }}px;">
+  {{ block.settings.title }}
+</h2>
+
+           <div style="color: {{ block.settings.paratext_color }}; font-size: {{ block.settings.paratext_size }}px;">{{ block.settings.paragraph }}</div>
+           <a href="https://earflush.dk/products/earflush-dk" class="try-now-button">PRØV NU</a>
+         
+   {% endcase %}
+   {% endfor %}
+  </div>
+  
+  <div class="right_side_container" style="background-color: {{ section.settings.right_container_background }}">
+   <div class="right_side_wrapper">
+         <div class="width-60%">
+        </div>
+          <div class="width-20% bg_color margindiv {% if section.settings.image_logo_mobile != blank %} hide_on_mobile {% endif %}"> 
+            {{ section.settings.image_logo | image_url: width: "500x" | image_tag }}
+            </div>
+             {% if section.settings.image_logo_mobile != blank %}
+              <div class="width-20% bg_color hode_on_descktop "> 
+             {{ section.settings.image_logo_mobile | image_url: width: "500x" | image_tag }}
+            </div>
+               {% endif %}
+          <div class="width-20%"> 
+             <p style="color: {{ block.settings.tabletext_color }}; font-size:{{ block.settings.tabletext_size }};">
+              Andre
+            </p>
+          </div>
+       </div>
+    {% for block in section.blocks %}
+    {% case block.type %}
+    {% when 'right_column' %}
+       <div class="right_side_wrapper ">
+         <div class="width-60%" style="font-size: {{ section.settings.tabletext_size | default: '16px' }}px;color: {{ section.settings.tabletext_color }}">
+            {{ block.settings.paragraph2 }}
+        </div>
+          <div class="width-20% bg_color right_side_wrapperr margin-bottomdiv"> 
+             <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="512" height="512" x="0" y="0" viewbox="0 0 682.667 682.667" style="enable-background:new 0 0 512 512" class="" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"><g><defs><clippath id="b" clippathunits="userSpaceOnUse"><path d="M0 512h512V0H0Z" fill="{{ section.settings.left_container_icon_color }}" opacity="1" data-original="#000000"></path></clippath></defs><mask id="a"><rect width="100%" height="100%" fill="#ffffff" opacity="1" data-original="#ffffff"></rect></mask><g mask="url(#a)"><path d="m0 0-134.174-134.174-63.873 63.872" style="stroke-width:40;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="matrix(1.33333 0 0 -1.33333 473.365 251.884)" fill="none" stroke="{{ section.settings.left_container_icon_color }}" stroke-width="40" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" class=""></path><g clip-path="url(#b)" transform="matrix(1.33333 0 0 -1.33333 0 682.667)"><path d="M0 0c0-130.339-105.661-236-236-236S-472-130.339-472 0s105.661 236 236 236S0 130.339 0 0Z" style="stroke-width:40;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(492 256)" fill="none" stroke="{{ section.settings.left_container_icon_color }}" stroke-width="40" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" class=""></path></g></g></g></svg>
+          </div>
+          <div class="width-20% width_smaller_icon right_side_wrapperr"> 
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="512" height="512" x="0" y="0" viewbox="0 0 329.269 329" style="enable-background:new 0 0 512 512" class="" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"><g><path d="M194.8 164.77 323.013 36.555c8.343-8.34 8.343-21.825 0-30.164-8.34-8.34-21.825-8.34-30.164 0L164.633 134.605 36.422 6.391c-8.344-8.34-21.824-8.34-30.164 0-8.344 8.34-8.344 21.824 0 30.164l128.21 128.215L6.259 292.984c-8.344 8.34-8.344 21.825 0 30.164a21.266 21.266 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25l128.21-128.214 128.216 128.214a21.273 21.273 0 0 0 15.082 6.25c5.46 0 10.922-2.09 15.082-6.25 8.343-8.34 8.343-21.824 0-30.164zm0 0" fill="{{ section.settings.right_container_icon_color }}" opacity="1" data-original="{{ section.settings.right_container_icon_color }}" class=""></path></g></svg>
+        </div>
+       </div>
+  {% endcase %}
+  {% endfor %}
+ </div>
+</div>
+</div>
+</div>
+
+{% schema %}
+{
+  "name": "Comparison slider",
+  "settings": [
+    {
+      "type": "color",
+      "id": "comparison_bg_color",
+      "label": "Comparison Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_logo",
+      "label": "Logo of the brand on desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_logo_mobile",
+      "label": "Logo of the brand on mobile"
+    },
+    {
+      "type": "text",
+      "id": "tabletitle",
+      "label": "Heading",
+      "default": "Andre"
+    },
+    {
+      "type": "color",
+      "id": "tabletext_color",
+      "label": "Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "number",
+      "id": "tabletext_size",
+      "label": "Text Size (px)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 36
+    },
+    {
+      "type": "color",
+      "id": "right_container_background",
+      "label": "Right Container Background Color",
+      "default": "#F3F3F3"
+    },
+    {
+      "type": "color",
+      "id": "left_container_icon_color",
+      "label": "Left Container Icon Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "right_container_icon_color",
+      "label": "Right Container Icon Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#2E75A5"
+    },
+    {
+      "type": "color",
+      "id": "button_border_color",
+      "label": "Button Border Color",
+      "default": "#2E75A5"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "left_column",
+      "name": "Left Side Content",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Quick Links"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+          "default": "#000000"
+        },
+        {
+          "type": "number",
+          "id": "text_size",
+          "label": "Text Size (px)",
+          "default": 16
+        },
+        {
+          "type": "richtext",
+          "id": "paragraph",
+          "label": "Description"
+        },
+        {
+          "type": "color",
+          "id": "paratext_color",
+          "label": "Paragraph Text Color",
+          "default": "#000000"
+        },
+        {
+          "type": "number",
+          "id": "paratext_size",
+          "label": "Paragraph Text Size (px)",
+          "default": 16
+        },
+        {
+          "type": "text",
+          "id": "button",
+          "label": "Button Label",
+          "default": "Show More"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Button URL"
+        }
+      ]
+    },
+    {
+      "type": "right_column",
+      "name": "Comparison Block",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "paragraph2",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "WS Comparison"
+    }
+  ]
+}
+{% endschema %}

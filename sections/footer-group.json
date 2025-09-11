@@ -1,0 +1,110 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "newsletter_bqNhUV": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_Lk7gcL": {
+          "type": "heading",
+          "settings": {
+            "heading": "Skriv dig op til vores nyhedsbrev",
+            "heading_size": "h2"
+          }
+        },
+        "paragraph_aXjQcg": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Vær den første til at få besked om nye kollektioner og eksklusive tilbud.</p>"
+          }
+        },
+        "email_form_GEMmwp": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_Lk7gcL",
+        "paragraph_aXjQcg",
+        "email_form_GEMmwp"
+      ],
+      "settings": {
+        "color_scheme": "scheme-5",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "text_WHngRp": {
+          "type": "text",
+          "settings": {
+            "heading": "Vores Mission",
+            "subtext": "<p>Vi skaber innovative løsninger, der giver mennesker frihed fra smerter, forbedrer deres mobilitet og løfter deres livskvalitet.</p>"
+          }
+        },
+        "link_list_T3hpar": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Genveje",
+            "menu": "main-menu"
+          }
+        },
+        "link_list_UzArhY": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Mere info",
+            "menu": "footer"
+          }
+        },
+        "text_iaQREE": {
+          "type": "text",
+          "settings": {
+            "heading": "Om os",
+            "subtext": "<p>CVR: 44644711 <br/>Telefon: +45 91 80 29 20<br/>Email: info@bodyflex.dk</p><p>Brug for hjælp? Kontakt os:<br/>Hverdage: 8 - 20<br/>Weekend: 10 - 16<br/>Helligdage: 10 - 15</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_WHngRp",
+        "link_list_T3hpar",
+        "link_list_UzArhY",
+        "text_iaQREE"
+      ],
+      "custom_css": [
+        "p,a {font-size: 12px; text-decoration: none !important;}",
+        ".footer-block {padding-right: 20px;}",
+        "h2 {font-style: italic;}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-5",
+        "newsletter_enable": false,
+        "newsletter_heading": "Skriv dig op til vores nyhedsbrev",
+        "enable_follow_on_shop": false,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": false,
+        "show_policy": true,
+        "margin_top": 0,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "newsletter_bqNhUV",
+    "footer"
+  ]
+}
