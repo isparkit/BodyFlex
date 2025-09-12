@@ -105,7 +105,7 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 
 @media screen and (min-width: 750px) {
   .page-width {
-    padding: 0 5rem;
+    padding: 0 3rem;
   }
 
   .header.page-width,
@@ -129,8 +129,8 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 
 @media screen and (min-width: 990px) {
   .header:not(.drawer-menu).page-width {
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 
   .page-width--narrow {
@@ -2425,8 +2425,8 @@ input[type="checkbox"] {
 
   .header--middle-left {
     grid-template-areas: "heading navigation icons";
-    grid-template-columns: auto auto 1fr;
-    column-gap: 2rem;
+    grid-template-columns: 1fr auto auto;
+    column-gap: 4rem;
   }
 
   .header--middle-center:not(.drawer-menu) {
@@ -2522,7 +2522,7 @@ input[type="checkbox"] {
 @media screen and (min-width: 990px) {
   .header--middle-left .header__heading-link,
   .header--top-left .header__heading-link {
-    margin-left: -0.75rem;
+    margin-left: 0;
   }
 
   .header__heading,
@@ -2548,7 +2548,7 @@ input[type="checkbox"] {
   display: flex;
   grid-area: icons;
   justify-self: end;
-  padding-right: 0.8rem;
+  padding-right: 0;
 }
 
 .header__icons .shopify-app-block {
@@ -2602,7 +2602,7 @@ input[type="checkbox"] {
 
 .header__icon--cart {
   position: relative;
-  margin-right: -1.2rem;
+  margin-right: 0;
 }
 
 .header__icon--menu[aria-expanded="true"]::before {
@@ -2848,6 +2848,10 @@ details[open] > .header__submenu {
 
 .header__menu-item span {
   transition: text-decoration var(--duration-short) ease;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0;
 }
 
 .header__menu-item:hover span {
@@ -3695,27 +3699,27 @@ details-disclosure > details {
 
 h1,
 .h1 {
-  font-size: clamp(28px, 2.5vw + 20px, 60px);
+  font-size: clamp(28px, 2.5vw + 20px, 60px) !important;
 }
  
 h2,
 .h2 {
-  font-size: clamp(24px, 1.8vw + 20px, 48px);
+  font-size: clamp(24px, 1.8vw + 20px, 48px) !important;
 }
  
 h4,
 .h4 {
-  font-size: clamp(20px, 0.45vw + 20px, 28px);
+  font-size: clamp(20px, 0.45vw + 20px, 28px) !important;
 }
  
 h5,
 .h5 {
-  font-size: clamp(18px, 0.45vw + 18px, 24px);
+  font-size: clamp(18px, 0.45vw + 18px, 24px) !important;
 }
  
 h6,
 .h6 {
-  font-size: clamp(18px, 0.3vw + 18px, 22px);
+  font-size: clamp(18px, 0.3vw + 18px, 22px) !important;
 }
 p,
 .p {

@@ -10,13 +10,13 @@
 {
   "current": {
     "logo": "shopify://shop_images/Mask_group.png",
-    "logo_width": 230,
+    "logo_width": 231,
     "favicon": "shopify://shop_images/Gearpro-3.png",
     "type_header_font": "montserrat_n6",
     "heading_scale": 100,
     "type_body_font": "open_sans_n4",
     "body_scale": 100,
-    "page_width": 1200,
+    "page_width": 1340,
     "spacing_sections": 0,
     "spacing_grid_horizontal": 8,
     "spacing_grid_vertical": 8,
@@ -235,13 +235,13 @@
       },
       "scheme-4be16a6a-907f-4691-9358-704aceba4074": {
         "settings": {
-          "background": "rgba(0,0,0,0)",
+          "background": "#352d45",
           "background_gradient": "",
           "text": "#ffffff",
-          "button": "#6b79d3",
-          "button_label": "#ffffff",
-          "secondary_button_label": "#6b79d3",
-          "shadow": "#6b79d3"
+          "button": "#ffffff",
+          "button_label": "#352d45",
+          "secondary_button_label": "#ffffff",
+          "shadow": "#ffffff"
         }
       }
     }
