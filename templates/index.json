@@ -15,7 +15,7 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Slip for smerter – bevæg dig frit igen med BodyFlex™",
+            "heading": "Forvandl dine hjemmetræningsøvelser med BodyFlex – udstyr på studieniveau derhjemme.",
             "heading_size": "h1"
           }
         },
@@ -29,7 +29,7 @@
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Køb BodyFlex her",
+            "button_label_1": "Få din i dag",
             "button_link_1": "shopify://products/bodyflex-pilates-reformer",
             "button_style_secondary_1": false,
             "button_label_2": "",

@@ -128,7 +128,7 @@
             </h2>
           {%- when 'text' -%}
             <div class="banner__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
-              <p>{{ block.settings.text }}</p>
+              <h4>{{ block.settings.text }}</h4>
             </div>
           {%- when 'buttons' -%}
             <div
@@ -142,9 +142,12 @@
                   {% else %}
                     href="{{ block.settings.button_link_1 }}"
                   {% endif %}
-                  class="button{% if block.settings.button_style_secondary_1 %} button--secondary{% else %} button--primary{% endif %}"
+                  class="btn-arrow button{% if block.settings.button_style_secondary_1 %} button--secondary{% else %} button--primary{% endif %}"
                 >
                   {{- block.settings.button_label_1 | escape -}}
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7.92871 0.928731C8.31914 0.538306 8.95223 0.538504 9.34277 0.928731L15.707 7.29299C16.0976 7.68352 16.0976 8.31653 15.707 8.70705L9.34277 15.0713C8.95223 15.4616 8.31914 15.4617 7.92871 15.0713C7.53829 14.6809 7.53848 14.0478 7.92871 13.6573L12.5859 9.00002H1C0.447715 9.00002 0 8.55231 0 8.00002C0 7.44774 0.447715 7.00002 1 7.00002H12.5859L7.92871 2.3428C7.53848 1.95225 7.53829 1.31916 7.92871 0.928731Z" fill="white"/>
+                  </svg>
                 </a>
               {%- endif -%}
               {%- if block.settings.button_label_2 != blank -%}

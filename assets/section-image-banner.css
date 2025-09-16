@@ -1,3 +1,11 @@
+.banner .banner__text h4 {
+    font-weight: 500;
+    line-height: 38px;
+}
+.banner .banner__text {
+    max-width: 1050px;
+    margin: auto;
+}
 .banner {
   display: flex;
   position: relative;
@@ -5,7 +13,12 @@
   z-index: auto;
   isolation: isolate;
 }
-
+.banner .banner__content .btn-arrow {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: 0;
+}
 .banner__box {
   text-align: center;
 }
@@ -212,7 +225,9 @@
     height: 100%;
   }
 }
-
+.banner.banner--adapt {
+  height: 100vh;
+}
 .banner--adapt,
 .banner--adapt_image.banner--mobile-bottom .banner__media:not(.placeholder) {
   height: auto;
@@ -361,10 +376,11 @@
   .banner--desktop-transparent .banner__box {
     padding: 4rem 0;
     background: transparent;
-    max-width: 89rem;
+    max-width: 100%;
     border: none;
     border-radius: 0;
     box-shadow: none;
+    top: 122px;
   }
 
   .banner--desktop-transparent .button--secondary {
@@ -435,6 +451,9 @@
 
 .banner__heading {
   margin-bottom: 0;
+  line-height: 70px;
+  letter-spacing: 0;
+  font-weight: 700;
 }
 
 .banner__box .banner__heading + * {
