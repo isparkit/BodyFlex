@@ -6,7 +6,7 @@
       #Banner-{{ section.id }}::before,
       #Banner-{{ section.id }} .banner__media::before,
       #Banner-{{ section.id }}:not(.banner--mobile-bottom) .banner__content::before {
-        padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;
+        /* padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%; */
         content: '';
         display: block;
       }
@@ -15,7 +15,7 @@
     @media screen and (min-width: 750px) {
       #Banner-{{ section.id }}::before,
       #Banner-{{ section.id }} .banner__media::before {
-        padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;
+        /* padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%; */
         content: '';
         display: block;
       }
@@ -174,16 +174,31 @@
             justify-content: center;
             margin: 0;
         }
+        .custom-review-container a {
+          align-items: center !important;
+        }
 
             .random-review-container {
             margin-top: -22px;
+        }
+        .custom-review-text {
+          font-size: 16px !important;
+        }
+        .random-review-text {
+            font-size: 20px !important;
+            text-box-edge: cap alphabetic;
+            text-box-trim: trim-both;
         }
 
         .custom-review-text,
         .random-review-text {
             font-weight: 500;
             color: #ffffff;
-            margin-right: 6px;
+            margin: 0px !important;
+        }
+        .custom-rating-score {
+            margin: 0 !important;
+            font-size: 16px !important;
         }
 
         .custom-review-image,
@@ -233,16 +248,16 @@
     </style>
 
 <body>
-  <div class="custom-review-container" style="display: flex; align-items: center; margin-top: 5px;">
-    <a href="https://dk.trustpilot.com/review/bodyflex.dk" target="_blank" style="display: flex; align-items: center; text-decoration: none;">
-      <p class="custom-review-text" style="font-size: 14px; margin-right: 5px; color: white;">Fremragende</p>
-      <img src="https://cdn.trustpilot.net/brand-assets/4.1.0/stars/stars-4.5.svg" alt="Trustpilot Review" class="custom-review-image" style="width: 80px; height: auto;">
+  <div class="custom-review-container" style="display: flex; align-items: center; margin-top: 30px;">
+    <a href="https://dk.trustpilot.com/review/bodyflex.dk" target="_blank" style="display: flex; align-items: center; text-decoration: none;gap: 10px;">
+      <p class="custom-review-text" style="font-size: 16px; margin-right: 0px; color: white;">Fremragende</p>
+      <img src="https://cdn.trustpilot.net/brand-assets/4.1.0/stars/stars-4.5.svg" alt="Trustpilot Review" class="custom-review-image" style="width: 133px; height: auto;">
       <p class="custom-rating-score" style="font-size: 14px; margin-left: 5px; color: white;">4.6/5</p>
     </a>
   </div>
 
   <!-- Increased margin-top to create more space between "Glade og tilfredse kunder" and one-star Trustpilot logo -->
-  <div class="random-review-container" style="margin-top: 5px;">
+  <div class="random-review-container" style="margin-top: 11px; gap: 5px;">
     <p class="random-review-text" style="font-size: 14px; margin: 0; color: white;">Glade og tilfredse kunder</p>
     <img src="https://cdn.shopify.com/s/files/1/0484/9955/6501/files/Untitled_design_71.png?v=1718713088" alt="Trustpilot Review" class="random-review-image">
   </div>
