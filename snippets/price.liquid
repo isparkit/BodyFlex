@@ -91,22 +91,40 @@
         {%- endif -%}
       </div>
       <div class="price__sale">
+
+        {%- assign product_price = product.selected_or_first_available_variant.price -%}
+        {%- assign original_price = product.selected_or_first_available_variant.compare_at_price -%}
+
+
         {%- unless product.price_varies == false and product.compare_at_price_varies %}
           <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
+          <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
+        
+           {% if original_price > product_price %}
+           {%- assign discount = original_price | minus: product_price -%}
+           {%- assign discount_percentage = discount | times: 100 | divided_by: original_price -%}
+           {% endif %}
+
+          <h6 class="price-item price-item--sale price-item--last">
+          {{ money_price }}
+        </h6>
           <span>
-            <s class="price-item price-item--regular">
+            <h6 class="price-item price-item--regular">
               {% if settings.currency_code_enabled %}
                 {{ compare_at_price | money_with_currency }}
               {% else %}
                 {{ compare_at_price | money }}
               {% endif %}
-            </s>
+            </h6>
           </span>
+
+           {% if original_price > product_price %}
+          <span class="price-discount">
+          Spar {{ discount_percentage | round }}%
+          </span>
+          {% endif %}
+
         {%- endunless -%}
-        <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
-        <span class="price-item price-item--sale price-item--last">
-          {{ money_price }}
-        </span>
       </div>
       <small class="unit-price caption{% if product.selected_or_first_available_variant.unit_price_measurement == nil %} hidden{% endif %}">
         <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>

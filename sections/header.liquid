@@ -74,6 +74,18 @@
 
 {%- style -%}
 {% # Added by Bruno B @ Shopify - May 30 2025 %}
+  .template-index .header-wrapper{
+    position: absolute;
+    width: 100%;
+    background: transparent;
+    color: #fff;
+  }
+  .template-index .header__menu-item, .template-index .header__icon {
+    color: inherit;
+  }
+  .template-index .header__heading-logo {
+    filter: invert(1);
+  }
   .header-wrapper--border-bottom{
     border-bottom: 0;
   }
@@ -268,9 +280,15 @@
 
       <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
           {% if cart == empty %}
-            <span class="svg-wrapper">{{'icon-cart-empty.svg' | inline_asset_content }}</span>
+            <span class="svg-wrapper">
+              {% comment %} {{'icon-cart-empty.svg' | inline_asset_content }} {% endcomment %}
+              {{'custom-icon-cart.svg' | inline_asset_content }}
+              </span>
           {% else %}
-            <span class="svg-wrapper">{{'icon-cart.svg' | inline_asset_content }}</span>
+            <span class="svg-wrapper">
+              {% comment %} {{'icon-cart.svg' | inline_asset_content }} {% endcomment %}
+               {{'custom-icon-cart.svg' | inline_asset_content }}
+              </span>
           {% endif %}
         <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
         {%- if cart != empty -%}
@@ -282,6 +300,7 @@
           </div>
         {%- endif -%}
       </a>
+
     </div>
   </header>
 </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>

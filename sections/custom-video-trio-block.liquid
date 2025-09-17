@@ -1,0 +1,110 @@
+{% schema %}
+{
+  "name": "Video Trio Block",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "video_block",
+      "name": "Video Block",
+      "settings": [
+        {
+          "type": "video",
+          "id": "video_file",
+          "label": "Select Video File"
+        },
+        {
+          "type": "image_picker",
+          "id": "poster_image",
+          "label": "Poster Image (Thumbnail)"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "Video Trio Block",
+      "category": "Custom",
+      "blocks": [
+        { "type": "video_block" },
+        { "type": "video_block" },
+        { "type": "video_block" }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<section class="video-trio-section">
+  <div class="video-trio-wrapper">
+    {% for block in section.blocks %}
+      {% assign video = block.settings.video_file %}
+      {% if video != blank %}
+        <div class="video-block {% if forloop.index == 2 %}center-video{% endif %}">
+          <video
+            {% if forloop.index == 2 %}
+              autoplay muted loop playsinline
+            {% else %}
+              controls
+            {% endif %}
+            preload="metadata"
+            {% if block.settings.poster_image != blank %}
+              poster="{{ block.settings.poster_image | img_url: 'master' }}"
+            {% endif %}
+          >
+            {% for source in video.sources %}
+              <source src="{{ source.url | prepend: 'https:' }}" type="{{ source.mime_type }}">
+            {% endfor %}
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      {% else %}
+        <p>Please select a video file in the block settings.</p>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<style>
+.video-trio-section {
+  padding: 40px 20px;
+  background: #fff;
+}
+
+.video-trio-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: nowrap; /* fixed 3 in a row */
+}
+
+.video-block {
+  flex: 1 1 30%;
+  max-width: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.video-block video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+.center-video video {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  border-radius: 14px;
+}
+
+@media (max-width: 768px) {
+  .video-trio-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  .video-block {
+    max-width: 90%;
+  }
+}
+</style>
