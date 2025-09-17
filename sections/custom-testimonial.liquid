@@ -1,0 +1,220 @@
+<section class="custom-reviews-section">
+  <div class="custom-reviews-header">
+    <h2>{{ section.settings.heading }}</h2>
+    <div class="custom-average-rating">
+      <span class="custom-rating-value">{{ section.settings.average_rating }}</span>
+      <div class="custom-stars">
+        {% assign rating = section.settings.average_rating | plus: 0 %}
+        {% assign full_stars = rating | floor %}
+        {% assign has_half_star = rating | modulo: 1 %}
+        
+        {% for i in (1..full_stars) %}
+          {% render 'review-star-svg', color: '#00b67a' %}
+        {% endfor %}
+        
+        {% if has_half_star > 0 %}
+          {% render 'review-star-svg', color: 'half' %}
+        {% endif %}
+
+        {% assign remaining_stars = 5 | minus: full_stars %}
+        {% if has_half_star > 0 %}
+          {% assign remaining_stars = remaining_stars | minus: 1 %}
+        {% endif %}
+
+        {% for i in (1..remaining_stars) %}
+          {% render 'review-star-svg', color: '#ccc' %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="custom-reviews-slider swiper">
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %}
+        <div class="custom-review-card swiper-slide">
+          <div class="custom-stars">
+            {% assign rating = block.settings.rating | plus: 0 %}
+            {% assign full_stars = rating | floor %}
+            {% assign has_half_star = rating | modulo: 1 %}
+            
+            {% for i in (1..full_stars) %}
+              {% render 'review-star-svg', color: '#00b67a' %}
+            {% endfor %}
+            
+            {% if has_half_star > 0 %}
+              {% render 'review-star-svg', color: 'half' %}
+            {% endif %}
+
+            {% assign remaining_stars = 5 | minus: full_stars %}
+            {% if has_half_star > 0 %}
+              {% assign remaining_stars = remaining_stars | minus: 1 %}
+            {% endif %}
+
+            {% for i in (1..remaining_stars) %}
+              {% render 'review-star-svg', color: '#ccc' %}
+            {% endfor %}
+          </div>
+          <h4>{{ block.settings.title }}</h4>
+          <p>{{ block.settings.content }}</p>
+          <h6 class="custom-review-author">{{ block.settings.author }}</h6>
+        </div>
+      {% endfor %}
+    </div>
+
+    <!-- Swiper navigation -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Reviews Slider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Se hvad andre siger om BodyFlex"
+    },
+    {
+      "type": "range",
+      "id": "average_rating",
+      "label": "Average Rating",
+      "min": 0,
+      "max": 5,
+      "step": 0.5,
+      "default": 4.5
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "range",
+          "id": "rating",
+          "label": "Rating",
+          "min": 0,
+          "max": 5,
+          "step": 0.5,
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Review Title",
+          "default": "Fantastisk service og kvalitet!"
+        },
+        {
+          "type": "textarea",
+          "id": "content",
+          "label": "Review Content",
+          "default": "Jeg har haft en rigtig god oplevelse med BodyFlex! Lynhurtig levering, og BodyFlex Pilates reformer lever helt op til forventningerne og er super god kvalitet."
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Reviewer Name",
+          "default": "Ismail K."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Reviews Slider",
+      "category": "Testimonials",
+      "blocks": [
+        { "type": "review" },
+        { "type": "review" }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<!-- ✅ Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<style>
+.custom-reviews-section {
+  display: flex;
+  {% comment %} grid-template-columns: 530px 1fr; {% endcomment %}
+  gap: 3rem;
+  align-items: start;
+}
+.custom-reviews-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 30%;
+}
+.custom-stars {
+  display: flex;
+  gap: 4px;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+.custom-stars svg{
+  width: 20px;
+  height: 20px;
+}
+.custom-review-card {
+  background: #F4F5FF;
+  border: 1px solid #6B79D3;
+  border-radius: 12px;
+  padding: 1rem;
+  min-width: 280px;
+}
+.custom-review-card h4 {
+    font-weight: 600;
+    font-size: clamp(20px, 0.45vw + 20px, 26px) !important;
+    line-height: 26px;
+    text-align: center;
+}
+.custom-review-card .custom-review-author {
+    font-weight: 600;
+    line-height: 22px;
+    text-align: center;
+}
+.custom-review-card p {
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+}
+.custom-reviews-slider {
+  position: relative;
+  width: 70%;
+}
+.custom-review-author {
+  font-weight: bold;
+  margin-top: 8px;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  color: #00b67a;
+}
+</style>
+
+<!-- ✅ Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  new Swiper('.custom-reviews-slider', {
+    loop: true,
+    slidesPerView: 3,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    },
+    breakpoints: {
+      1024: { slidesPerView: 3.2 },
+      768: { slidesPerView: 2 },
+      480: { slidesPerView: 1 }
+    }
+  });
+});
+</script>

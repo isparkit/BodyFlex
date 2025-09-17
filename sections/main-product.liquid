@@ -1,6 +1,6 @@
 <product-info
   id="MainProduct-{{ section.id }}"
-  class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
+  class="custom-main-product section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
   data-section="{{ section.id }}"
   data-product-id="{{ product.id }}"
   data-update-url="true"
@@ -26,33 +26,32 @@
   {%- endif -%}
 
   {%- style -%}
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-    }
+        .section-{{ section.id }}-padding {
+          padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+          padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+        }
 
-    @media screen and (min-width: 750px) {
-      .section-{{ section.id }}-padding {
-        padding-top: {{ section.settings.padding_top }}px;
-        padding-bottom: {{ section.settings.padding_bottom }}px;
+        @media screen and (min-width: 750px) {
+          .section-{{ section.id }}-padding {
+            padding-top: {{ section.settings.padding_top }}px;
+            padding-bottom: {{ section.settings.padding_bottom }}px;
+          }
+        }
+
+    {% # Added by Bruno B @ Shopify - May 30 2025 %}
+    @media screen and (max-width: 749px) {
+      #MainProduct-{{ section.id }} {
+        padding-top: 0;
+      }
+
+      .slider.slider--mobile {
+        scroll-padding-left: 0;
+      }
+
+      .product-media-container {
+        border: 0 !important;
       }
     }
-
-{% # Added by Bruno B @ Shopify - May 30 2025 %} 
-@media screen and (max-width: 749px) {
-  #MainProduct-{{ section.id }} {
-    padding-top: 0;
-  }
-  
-  .slider.slider--mobile {
-    scroll-padding-left: 0;
-  }
-  
-  .product-media-container {
-    border: 0 !important;
-  }
-}   
-  
   {%- endstyle -%}
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
@@ -105,6 +104,34 @@
             {%- case block.type -%}
               {%- when '@app' -%}
                 {% render block %}
+
+              {%- when 'feature_list' -%}
+                <div class="feature-list">
+                  {% for i in (1..4) %}
+                    <div class="feature-item">
+                      {% assign icon = 'icon_' | append: i %}
+                      {% assign heading = 'heading_' | append: i %}
+                      {% assign subtext = 'subtext_' | append: i %}
+
+                      {% if block.settings[icon] != blank %}
+                        <div class="feature-item-img">
+                          <img src="{{ block.settings[icon] | img_url: '50x50' }}" alt="icon" class="feature-icon">
+                        </div>
+                      {% endif %}
+
+                      <div class="feature-item-content">
+                        {% if block.settings[heading] != blank %}
+                          <p class="feature-heading">{{ block.settings[heading] }}</p>
+                        {% endif %}
+
+                        {% if block.settings[subtext] != blank %}
+                          <p class="feature-subtext">{{ block.settings[subtext] }}</p>
+                        {% endif %}
+                      </div>
+                    </div>
+                  {% endfor %}
+                </div>
+
               {%- when 'text' -%}
                 <p
                   class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
@@ -114,7 +141,7 @@
                 </p>
               {%- when 'title' -%}
                 <div class="product__title" {{ block.shopify_attributes }}>
-                  <h1>{{ product.title | escape }}</h1>
+                  <h2>{{ product.title | escape }}</h2>
                   <a href="{{ product.url }}" class="product__title">
                     <h2 class="h1">
                       {{ product.title | escape }}
@@ -243,6 +270,31 @@
                     </div>
                   </details>
                 </div>
+              {%- when 'popup' -%}
+                <modal-opener
+                  class="product-popup-modal__opener quick-add-hidden"
+                  data-modal="#PopupModal-{{ block.id }}"
+                  {{ block.shopify_attributes }}
+                >
+                  <button
+                    id="ProductPopup-{{ block.id }}"
+                    class="product-popup-modal__button link"
+                    type="button"
+                    aria-haspopup="dialog"
+                  >
+                    {{ block.settings.text | default: block.settings.page.title | escape }}
+                  </button>
+                </modal-opener>
+              {%- when 'share' -%}
+                {% liquid
+                  assign share_url = product.selected_variant.url | default: product.url | prepend: request.origin
+                  render 'share-button', block: block, share_link: share_url
+                %}
+
+              {%- when 'variant_picker' -%}
+                {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+
+                <div class="custom-quantity-buttons">
               {%- when 'quantity_selector' -%}
                 <div
                   id="Quantity-Form-{{ section.id }}"
@@ -456,29 +508,7 @@
                     </volume-pricing>
                   {%- endif -%}
                 </div>
-              {%- when 'popup' -%}
-                <modal-opener
-                  class="product-popup-modal__opener quick-add-hidden"
-                  data-modal="#PopupModal-{{ block.id }}"
-                  {{ block.shopify_attributes }}
-                >
-                  <button
-                    id="ProductPopup-{{ block.id }}"
-                    class="product-popup-modal__button link"
-                    type="button"
-                    aria-haspopup="dialog"
-                  >
-                    {{ block.settings.text | default: block.settings.page.title | escape }}
-                  </button>
-                </modal-opener>
-              {%- when 'share' -%}
-                {% liquid
-                  assign share_url = product.selected_variant.url | default: product.url | prepend: request.origin
-                  render 'share-button', block: block, share_link: share_url
-                %}
 
-              {%- when 'variant_picker' -%}
-                {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
               {%- when 'buy_buttons' -%}
                 {%- render 'buy-buttons',
                   block: block,
@@ -487,6 +517,8 @@
                   section_id: section.id,
                   show_pickup_availability: true
                 -%}
+                </div>
+
               {%- when 'rating' -%}
                 {%- if product.metafields.reviews.rating.value != blank -%}
                   <div class="rating-wrapper">
@@ -562,7 +594,7 @@
                             | plus: 0.0
                             | divided_by: block.settings.products_per_page
                             | ceil
-                          -%}                 
+                          -%}
                           <div
                             id="Slider-{{ block.id }}"
                             class="contains-card contains-card--product complementary-slider grid grid--1-col slider slider--everywhere"
@@ -570,7 +602,7 @@
                             {% if number_of_slides > 1 %}
                               aria-label="{{ 'general.slider.name' | t }}"
                             {% endif %}
-                          >                              
+                          >
                             {% assign skip_card_product_styles = false %}
                             {%- for i in (1..number_of_slides) -%}
                               <div
@@ -676,6 +708,88 @@
                 </product-recommendations>
               {%- when 'icon-with-text' -%}
                 {% render 'icon-with-text', block: block %}
+
+              {%- when 'images_block' -%}
+                {% if block.settings.heading != blank %}
+                  <p class="bodyflex-heading">{{ block.settings.heading }}</p>
+                {% endif %}
+                <div class="bodyflex-marquee">
+                  <div class="bodyflex-track">
+                    {%- for i in (1..5) -%}
+                      {% capture image_key %}image_{{ i }}{% endcapture %}
+                      {% if block.settings[image_key] != blank %}
+                        <div class="bodyflex-item">
+                          <img
+                            src="{{ block.settings[image_key] | img_url: '600x' }}"
+                            alt="Bodyflex image {{ i }}"
+                            loading="lazy"
+                          >
+                        </div>
+                      {% endif %}
+                    {%- endfor -%}
+                  </div>
+                </div>
+
+              {%- when 'accordion_block' %}
+                <div class="accordion-wrapper">
+                  <div class="accordion-single">
+                    <button class="accordion-header">
+                      <span>{{ block.settings.accordion_heading_1 }}</span>
+                      <span class="accordion-icon">{% render 'custom-plus-icon' %}</span>
+                    </button>
+                    <div class="accordion-content">
+                      {{ block.settings.accordion_content_1 }}
+                    </div>
+                  </div>
+
+                  <div class="accordion-single">
+                    <button class="accordion-header">
+                      <span>{{ block.settings.accordion_heading_2 }}</span>
+                      <span class="accordion-icon">{% render 'custom-plus-icon' %}</span>
+                    </button>
+                    <div class="accordion-content">
+                      {{ block.settings.accordion_content_2 }}
+                    </div>
+                  </div>
+
+                  <div class="accordion-single">
+                    <button class="accordion-header">
+                      <span>{{ block.settings.accordion_heading_3 }}</span>
+                      <span class="accordion-icon">{% render 'custom-plus-icon' %}</span>
+                    </button>
+                    <div class="accordion-content">
+                      {{ block.settings.accordion_content_3 }}
+                    </div>
+                  </div>
+                </div>
+
+              {%- when 'guarantee_bar' -%}
+                <div class="guarantee-marquee">
+                  <div class="guarantee-track">
+                    {% for i in (1..4) %}
+                      <div class="guarantee-item">
+                        {% if block.settings.icon_1 %}
+                          <img src="{{ block.settings.icon_1 | img_url }}" alt="icon 1">
+                        {% endif %}
+                        <span>{{ block.settings.text_1 }}</span>
+                      </div>
+
+                      <div class="guarantee-item">
+                        {% if block.settings.icon_2 %}
+                          <img src="{{ block.settings.icon_2 | img_url }}" alt="icon 2">
+                        {% endif %}
+                        <span>{{ block.settings.text_2 }}</span>
+                      </div>
+
+                      <div class="guarantee-item">
+                        {% if block.settings.icon_3 %}
+                          <img src="{{ block.settings.icon_3 | img_url }}" alt="icon 3">
+                        {% endif %}
+                        <span>{{ block.settings.text_3 }}</span>
+                      </div>
+                    {% endfor %}
+                  </div>
+                </div>
             {%- endcase -%}
           {%- endfor -%}
           <a href="{{ product.url }}" class="link product__view-details animate-arrow">
@@ -748,6 +862,72 @@
   "blocks": [
     {
       "type": "@app"
+    },
+    {
+      "type": "feature_list",
+      "name": "Feature List",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon_1",
+          "label": "Icon 1"
+        },
+        {
+          "type": "text",
+          "id": "heading_1",
+          "label": "Heading 1"
+        },
+        {
+          "type": "textarea",
+          "id": "subtext_1",
+          "label": "Subtext 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_2",
+          "label": "Icon 2"
+        },
+        {
+          "type": "text",
+          "id": "heading_2",
+          "label": "Heading 2"
+        },
+        {
+          "type": "textarea",
+          "id": "subtext_2",
+          "label": "Subtext 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_3",
+          "label": "Icon 3"
+        },
+        {
+          "type": "text",
+          "id": "heading_3",
+          "label": "Heading 3"
+        },
+        {
+          "type": "textarea",
+          "id": "subtext_3",
+          "label": "Subtext 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_4",
+          "label": "Icon 4"
+        },
+        {
+          "type": "text",
+          "id": "heading_4",
+          "label": "Heading 4"
+        },
+        {
+          "type": "textarea",
+          "id": "subtext_4",
+          "label": "Subtext 4"
+        }
+      ]
     },
     {
       "type": "text",
@@ -2090,6 +2270,124 @@
           "info": "t:sections.main-product.blocks.icon_with_text.settings.heading.info"
         }
       ]
+    },
+    {
+      "type": "images_block",
+      "name": "Images Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "+2000 Kunder Elsker Vores Bodyflex"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Image 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_3",
+          "label": "Image 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_4",
+          "label": "Image 4"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_5",
+          "label": "Image 5"
+        }
+      ]
+    },
+    {
+      "type": "accordion_block",
+      "name": "Accordion Block (3 Items)",
+      "settings": [
+        {
+          "type": "text",
+          "id": "accordion_heading_1",
+          "label": "Accordion Heading 1",
+          "default": "Heading 1"
+        },
+        {
+          "type": "richtext",
+          "id": "accordion_content_1",
+          "label": "Accordion Content 1",
+          "default": "<p>Write your content for item 1 here.</p>"
+        },
+        {
+          "type": "text",
+          "id": "accordion_heading_2",
+          "label": "Accordion Heading 2",
+          "default": "Heading 2"
+        },
+        {
+          "type": "richtext",
+          "id": "accordion_content_2",
+          "label": "Accordion Content 2",
+          "default": "<p>Write your content for item 2 here.</p>"
+        },
+        {
+          "type": "text",
+          "id": "accordion_heading_3",
+          "label": "Accordion Heading 3",
+          "default": "Heading 3"
+        },
+        {
+          "type": "richtext",
+          "id": "accordion_content_3",
+          "label": "Accordion Content 3",
+          "default": "<p>Write your content for item 3 here.</p>"
+        }
+      ]
+    },
+    {
+      "type": "guarantee_bar",
+      "name": "Guarantee Bar",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon_1",
+          "label": "Icon 1"
+        },
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text 1",
+          "default": "2 års fabriksgaranti"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_2",
+          "label": "Icon 2"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text 2",
+          "default": "Ingen resultater = Pengene tilbage"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_3",
+          "label": "Icon 3"
+        },
+        {
+          "type": "text",
+          "id": "text_3",
+          "label": "Text 3",
+          "default": "Hurtig levering"
+        }
+      ]
     }
   ],
   "settings": [
@@ -2274,3 +2572,369 @@
   ]
 }
 {% endschema %}
+
+<style>
+  .custom-main-product .product .product__info-wrapper .product__title h2 {
+    font-weight: 500;
+    line-height: 48px;
+    letter-spacing: 0;
+  }
+  .custom-main-product .product .product__info-wrapper .feature-list {
+    margin: 0;
+    padding: 20px 0 10px 0;
+  }
+  .custom-main-product .product .product__info-wrapper .feature-list .feature-item {
+    display: flex;
+    gap: 10px;
+    padding-bottom: 20px;
+  }
+  .custom-main-product
+    .product
+    .product__info-wrapper
+    .feature-list
+    .feature-item
+    .feature-item-content
+    p.feature-heading {
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0;
+    margin: 0;
+  }
+  .custom-main-product
+    .product
+    .product__info-wrapper
+    .feature-list
+    .feature-item
+    .feature-item-content
+    p.feature-subtext {
+    font-size: 16px !important;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0;
+    margin: 0;
+  }
+
+  .custom-main-product .product .product__info-wrapper .price .price__container .price__sale h6.price-item--last {
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: 0;
+  }
+  .custom-main-product .product .product__info-wrapper .price .price__container .price__sale h6.price-item--regular {
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0;
+    text-decoration: line-through;
+  }
+
+  .custom-main-product .product .product__info-wrapper .price .price__badge-sale {
+    display: none !important;
+  }
+  .custom-main-product .product .product__info-wrapper .product-form__quantity {
+    display: block !important;
+    min-width: fit-content;
+    flex: unset !important;
+    margin: 0;
+  }
+  .custom-main-product .product .product__info-wrapper .price {
+    padding-bottom: 13px;
+    border-bottom: 1px solid #b9bcd0;
+  }
+  .price--on-sale .price__sale {
+    display: flex !important;
+    align-items: center;
+  }
+  span.price-discount {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    color: #6b79d3;
+    border: 1px solid #6b79d3;
+    border-radius: 50px;
+    padding: 7px 12px 3px 12px;
+    background: #eaedff;
+  }
+
+  .custom-main-product .product .product__info-wrapper .custom-quantity-buttons {
+    display: flex;
+    gap: 20px;
+    margin: 0 !important;
+    padding-top: 20px;
+    padding-bottom: 10px;
+  }
+
+  .custom-main-product .product .product__info-wrapper .custom-quantity-buttons .product-form__input .quantity__label {
+    display: none;
+  }
+
+  .custom-main-product .product .product__info-wrapper .custom-quantity-buttons .custom-buy-buttons {
+    width: 100%;
+  }
+
+  .custom-main-product
+    .product
+    .product__info-wrapper
+    .custom-quantity-buttons
+    .custom-buy-buttons
+    product-form.product-form {
+    margin: 0 !important;
+  }
+
+  .custom-main-product .product .product__info-wrapper .footer1-section .trustpilot-logo {
+    display: none;
+  }
+
+  .custom-main-product .product .product__info-wrapper .bodyflex-grid {
+    display: flex;
+    overflow: hidden;
+    gap: 10px;
+  }
+  .custom-main-product .product .product__info-wrapper .bodyflex-grid .bodyflex-item img {
+    height: 300px;
+    width: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  p.bodyflex-heading {
+    font-size: clamp(20px, 0.45vw + 20px, 32px) !important;
+    font-weight: 500;
+    line-height: 36px;
+    letter-spacing: 0;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const accordions = document.querySelectorAll('.accordion-single');
+
+    accordions.forEach((item, index) => {
+      const header = item.querySelector('.accordion-header');
+      const content = item.querySelector('.accordion-content');
+
+      // ✅ First accordion open by default
+      if (index === 0) {
+        header.classList.add('active');
+        content.classList.add('open');
+        content.style.maxHeight = content.scrollHeight + 'px';
+      }
+
+      header.addEventListener('click', function () {
+        const isOpen = content.classList.contains('open');
+
+        // Close all accordions first
+        accordions.forEach((acc) => {
+          acc.querySelector('.accordion-content').style.maxHeight = null;
+          acc.querySelector('.accordion-content').classList.remove('open');
+          acc.querySelector('.accordion-header').classList.remove('active');
+        });
+
+        // Open this one if it was closed
+        if (!isOpen) {
+          header.classList.add('active');
+          content.classList.add('open');
+          content.style.maxHeight = content.scrollHeight + 'px';
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .accordion-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .accordion-single {
+    border-bottom: 1px solid #6B79D3
+  }
+
+  .accordion-header {
+    width: 100%;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 20px 0;
+  }
+
+  .accordion-icon {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+
+  .accordion-header.active .accordion-icon {
+    transform: rotate(45deg);
+  }
+
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0;
+  }
+
+  .accordion-content.open {
+    margin: 10px 0;
+  }
+</style>
+
+<style>
+  .guarantee-marquee {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    opacity: 1;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border-width: 1px;
+    background: #eaedff;
+    border: 1px solid #6b79d3;
+  }
+  .guarantee-track {
+    display: flex;
+    gap: 40px;
+    animation: marquee 25s linear infinite;
+    white-space: nowrap;
+  }
+
+  .guarantee-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .guarantee-item img {
+    width: 19px;
+    height: 19px;
+    object-fit: contain;
+    display: block;
+  }
+  .guarantee-item span {
+    font-weight: 600;
+    font-size: clamp(14px, 0.3vw + 13px, 16px) !important;
+    line-height: 20px;
+    letter-spacing: 0;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+</style>
+
+{% comment %}
+  <style>
+  .bodyflex-heading {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+
+  .bodyflex-grid {
+    display: flex;
+    gap: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: bodyflex-scroll 25s linear infinite;
+  }
+
+  .bodyflex-item {
+    flex: 0 0 auto;
+  }
+
+  .bodyflex-item img {
+    display: block;
+    max-height: 100px; /* apne design ke hisab se adjust karo */
+    object-fit: contain;
+  }
+
+  @keyframes bodyflex-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  </style>
+{% endcomment %}
+
+<style>
+  .bodyflex-marquee {
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  .bodyflex-track {
+    display: inline-flex;
+    will-change: transform;
+  }
+
+  .bodyflex-item {
+    flex: 0 0 auto;
+    margin-right: 20px;
+  }
+
+  .bodyflex-item img {
+    height: 300px;
+    width: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const track = document.querySelector('.bodyflex-track');
+    if (!track) return;
+
+    // Duplicate content for infinite effect
+    track.innerHTML += track.innerHTML;
+
+    let position = 0;
+    const speed = 0.5; // <-- is value ko slow/fast ke liye change karein (0.2 slow, 1 fast)
+
+    function scrollMarquee() {
+      position -= speed;
+      if (Math.abs(position) >= track.scrollWidth / 2) {
+        position = 0;
+      }
+      track.style.transform = `translateX(${position}px)`;
+      requestAnimationFrame(scrollMarquee);
+    }
+
+    scrollMarquee();
+  });
+</script>
+
+
+<style>
+.custom-main-product .product .product__info-wrapper .accordion-wrapper .accordion-single .accordion-header span {
+    font-weight: 600;
+    font-size: clamp(14px, 0.3vw + 13px, 20px) !important;
+    line-height: 24px;
+    letter-spacing: 0;
+    color: #000;
+}
+.custom-main-product .product .product__info-wrapper .accordion-wrapper .accordion-single .accordion-content p {
+    font-weight: 500;
+    font-size: clamp(14px, 0.3vw + 13px, 18px) !important;
+    line-height: 22px;
+    letter-spacing: 0;
+    color: #000;
+    margin: 0;
+}
+</style>

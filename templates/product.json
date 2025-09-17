@@ -34,10 +34,34 @@
             "text_style": "body"
           }
         },
+        "feature_list_fkyrbG": {
+          "type": "feature_list",
+          "settings": {
+            "icon_1": "shopify://shop_images/clock.png",
+            "heading_1": "Fuld derhjemme på kun 15 minutter",
+            "subtext_1": "Lorem Ipsum er simpelthen dummy-tekst fra trykkeri- og typografibranchen.",
+            "icon_2": "shopify://shop_images/Home_1.png",
+            "heading_2": "Træn hjemme uden følelsen af at blive kigget på",
+            "subtext_2": "Lorem Ipsum er simpelthen dummy-tekst fra trykkeri typografibranchen.",
+            "icon_3": "shopify://shop_images/Frame_29_1.png",
+            "heading_3": "Tab 25 kg på blot 12 uger",
+            "subtext_3": "Lorem Ipsum er simpelthen typografibranchen.",
+            "icon_4": "shopify://shop_images/Checkmark_77db3a79-c520-4d2f-935e-1644fe16942c.png",
+            "heading_4": "Synlige resultater på 30 dage eller pengene retur",
+            "subtext_4": "Lorem Ipsum er simpelthen dummy-tekst- og typografibranchen."
+          }
+        },
         "custom_liquid_9Lw9y6": {
           "type": "custom_liquid",
+          "disabled": true,
           "settings": {
             "custom_liquid": "<style>\n  .usp-section {\n    display: flex;\n    flex-direction: column;\n    gap: 2px;\n  }\n\n  .usp {\n    display: flex;\n    align-items: center;\n    margin-top: 4px;\n  }\n\n  .usp-image {\n    width: 16px;  /* Smaller size */\n    height: 16px;\n    margin-right: 6px;\n    object-fit: contain;\n  }\n\n  .usp-text {\n    font-size: 13px;\n    color: #333;\n    margin: 0;\n  }\n</style>\n\n<div class=\"usp-section\">\n  <!-- First USP -->\n  <div class=\"usp\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0875/1500/5256/files/checkmark.png?v=1750371092\" alt=\"Checkmark\" class=\"usp-image\">\n    <p class=\"usp-text\">Fuld kropstræning derhjemme på kun 15 minutter</p>\n  </div>\n\n  <!-- Second USP -->\n  <div class=\"usp\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0875/1500/5256/files/checkmark.png?v=1750371092\" alt=\"Checkmark\" class=\"usp-image\">\n    <p class=\"usp-text\">Træn hjemme uden følelsen af at blive kigget på</p>\n  </div>\n\n  <!-- Third USP -->\n  <div class=\"usp\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0875/1500/5256/files/checkmark.png?v=1750371092\" alt=\"Checkmark\" class=\"usp-image\">\n    <p class=\"usp-text\">Tab 25 kg på blot 12 uger</p>\n  </div>\n\n  <!-- Fourth USP -->\n  <div class=\"usp\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0875/1500/5256/files/checkmark.png?v=1750371092\" alt=\"Checkmark\" class=\"usp-image\">\n    <p class=\"usp-text\">Synlige resultater på 30 dage eller pengene retur</p>\n  </div>\n</div>"
+          }
+        },
+        "custom_liquid_Mmep7V": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<style>\n.custom-shipping-container {\ndisplay: flex;\njustify-content: space-between;\nalign-items: center;\nalign-self: stretch;\nborder-radius: 20px;\nmargin: 0;\n}\n.text-block-shipping {\n    font-weight: 400;\n    line-height: 20px;\n    font-size: clamp(14px, 0.3vw + 13px, 18px) !important;\n}\n.text-block-shipping span {\n    font-weight: 600;\nfont-size: clamp(14px, 0.3vw + 13px, 18px) !important;\n}\n\n.custom-shipping-item {\ndisplay: flex;\nalign-items: center;\ngap: 6px;\n}\n.custom-shipping-item-icon {\n    display: flex;\n    gap: 10px;\n    align-items: center;\n    opacity: 1;\n    padding: 10px 15px 10px 10px;\n    border-radius: 5px;\n    border-width: 1px;\n    border: 1px solid #6B79D3;\n    background: #EAEDFF;\n}\n\nspan.free-shipping {\n    font-weight: 400;\n    line-height: 20px;\n    letter-spacing: 0;\n    font-size: clamp(14px, 0.3vw + 13px, 18px) !important;\ncolor: #000;\n}\n\n.green-circle {\nanimation: fade 1s ease-in-out infinite;\n}\n\n@keyframes fade {\n0%, 100% { opacity: 1; }\n50% { opacity: 0.5; }\n}\n</style>\n\n<script>\ndocument.addEventListener(\"DOMContentLoaded\", function() {\nvar daysAfterToday = 1; // Set this to the number of days after today that the item will ship to the customer\nvar today = new Date();\nvar shipDate = new Date(today.setDate(today.getDate() + daysAfterToday));\nvar options = { weekday: 'short', month: 'long', day: 'numeric' };\nvar formattedDate = shipDate.toLocaleDateString('da-DK', options);\ndocument.getElementById('shipping-date').textContent = formattedDate;\n});\n</script>\n\n<div class=\"custom-shipping-container\">\n<div class=\"custom-shipping-item\">\n<div class=\"text-block-shipping\">Sendes <span id=\"shipping-date\" class=\"shipping-date\"></span></div>\n</div>\n<div class=\"custom-shipping-item-icon\">\n<img src=\"https://cdn.shopify.com/s/files/1/0875/1500/5256/files/track.png?v=1757928285\" loading=\"lazy\" alt=\"\" class=\"custom-icon\">\n<div class=\"text-block-shipping\">\n<span class=\"free-shipping\">\nGratis fragt i begrænset tid</span></div>\n</div>\n</div>"
           }
         },
         "variant_picker": {
@@ -47,17 +71,16 @@
             "swatch_shape": "circle"
           }
         },
-        "quantity_selector": {
-          "type": "quantity_selector",
-          "disabled": true,
-          "settings": {}
-        },
         "custom_liquid_bNJyi9": {
           "type": "custom_liquid",
           "disabled": true,
           "settings": {
             "custom_liquid": "<style>\n  .preorder-message {\n    font-family: inherit;\n    font-size: 13px;\n    color: #1c1c1c;\n    line-height: 1.6;\n    margin-top: 12px;\n    margin-bottom: 0px; /* reduced from 20px */\n  }\n\n  .preorder-message .subtext {\n    font-size: 13px;\n    color: #333;\n    margin: 6px 0;\n  }\n\n  .preorder-message ul {\n    list-style: disc;\n    padding-left: 20px;\n    margin-top: 8px;\n    margin-bottom: 0;\n  }\n\n  .preorder-message li {\n    margin-bottom: 6px;\n  }\n\n  .preorder-message strong {\n    font-weight: 600;\n  }\n</style>\n\n<div class=\"preorder-message\">\n  <p class=\"subtext\">Vores populære <strong>BodyFlex Pilates Reformer</strong> er midlertidigt udsolgt pga. stor efterspørgsel, men du kan sikre dig et board ved at <strong>forudbestille i dag.</strong></p>\n\n  <ul>\n    <li><strong>Forventet levering:</strong> Slut august </li>\n    <li><strong>Begrænset antal på lager:</strong> Først til mølle</li>\n    <li><strong>Betaling:</strong> Trækkes først ved afsendelse</li>\n  </ul>\n</div>"
           }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
         },
         "buy_buttons": {
           "type": "buy_buttons",
@@ -66,22 +89,27 @@
             "show_gift_card_recipient": true
           }
         },
-        "custom_liquid_Mmep7V": {
+        "custom_liquid_rLjbFx": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<style>\n.custom-shipping-container {\ndisplay: flex;\npadding: 6px 16px;\njustify-content: space-between;\nalign-items: center;\nalign-self: stretch;\nbackground-color: #f6f6f6;\nborder-radius: 20px;\nmargin-top: -12px;\nmargin-bottom: 12px;\n}\n\n.custom-shipping-item {\ndisplay: flex;\nalign-items: center;\ngap: 6px;\n}\n\n.text-block-shipping {\nfont-size: 11px;\nmargin-top: 0px;\ncolor: #000;\n}\n\n.shipping-date {\nfont-weight: bold;\nfont-size: 11px;\n}\n\n.free-shipping {\nfont-weight: bold;\nfont-size: 11px;\n}\n\n.green-circle {\nanimation: fade 1s ease-in-out infinite;\n}\n\n@keyframes fade {\n0%, 100% { opacity: 1; }\n50% { opacity: 0.5; }\n}\n\n@media (max-width: 900px) {\n  .shipping-date, .free-shipping, .text-block-shipping {\n    font-size: 9px;\n  }\n}\n</style>\n\n<script>\ndocument.addEventListener(\"DOMContentLoaded\", function() {\nvar daysAfterToday = 1; // Set this to the number of days after today that the item will ship to the customer\nvar today = new Date();\nvar shipDate = new Date(today.setDate(today.getDate() + daysAfterToday));\nvar options = { weekday: 'short', month: 'long', day: 'numeric' };\nvar formattedDate = shipDate.toLocaleDateString('da-DK', options);\ndocument.getElementById('shipping-date').textContent = formattedDate;\n});\n</script>\n\n<div class=\"custom-shipping-container\">\n<div class=\"custom-shipping-item\">\n<svg class=\"green-circle\" xmlns=\"https://cdn.shopify.com/s/files/1/0807/7387/3998/files/world.png?v=1717588682\" width=\"12\" height=\"13\" viewBox=\"0 0 12 13\" fill=\"none\">\n<circle cx=\"6\" cy=\"6.5\" r=\"6\" fill=\"#137333\"/>\n</svg>\n<div class=\"text-block-shipping\">Sendes <span id=\"shipping-date\" class=\"shipping-date\"></span></div>\n</div>\n<div class=\"custom-shipping-item\">\n<img src=\"\" loading=\"lazy\" alt=\"\" class=\"custom-icon\">\n<div class=\"text-block-shipping\"><span class=\"free-shipping\">Gratis</span> fragt</div>\n</div>\n</div>"
+            "custom_liquid": "<style>\n  /* Styling for the footer section */\n  .footer1-section {\n    display: flex;\n    flex-direction: column;\n    align-items: center; /* Keep the payment icons centered */\n    margin-top: 0px;\n  }\n\n  /* Styling for the payment icons list */\n  .payment-icons1 {\n    list-style-type: none;\n    display: flex;\n    gap: 6px; /* Added gap between payment icons */\n    padding: 0;\n    margin: 0;\n    justify-content: center; /* Keep payment icons centered */\n  }\n\n  /* Styling for Trustpilot section */\n  .trustpilot-logo {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    gap: 6px; /* Space between elements */\n    margin-top: 10px;\n    width: 100%;\n  }\n\n  /* \"Fremragende\" text */\n  .trustpilot-text {\n    font-size: 14px;\n    font-weight: normal;\n    color: black;\n    line-height: 1;\n    text-align: center;\n  }\n\n  /* Trustpilot 4.5 stars */\n  .trustpilot-stars {\n    width: 100px; /* Adjusted size */\n    height: auto;\n    display: block;\n  }\n\n  /* Trustpilot logo */\n  .trustpilot-logo img {\n    display: block;\n    height: auto;\n  }\n\n  /* One-star Trustpilot logo */\n  .trustpilot-one-star {\n    width: 70px; /* Adjusted size */\n  }\n\n  /* Remove underline from the link */\n  a {\n    text-decoration: none;\n  }\n\n  /* Adjustments for smaller screens */\n  @media screen and (max-width: 900px) {\n    .trustpilot-logo {\n      gap: 4px; /* Reduce space between elements */\n    }\n\n    .trustpilot-text {\n      font-size: 12px; /* Smaller text */\n    }\n\n    .trustpilot-stars {\n      width: 90px; /* Smaller stars */\n    }\n\n    .trustpilot-one-star {\n      width: 55px; /* Increased size for mobile */\n    }\n  }\n</style>\n\n<!-- Wrap the entire content in a clickable anchor tag -->\n<a href=\"https://dk.trustpilot.com/review/bodyflex.dk\" target=\"_blank\">\n  <div class=\"footer1-section\">\n    <!-- Payment Icons Section -->\n    <ul class=\"inline-list payment-icons1\">\n      {% assign enabled_payment_types = 'mobilepay,visa,dankort,master,anyday,google_pay,apple_pay,paypal,' | remove: ' ' | split: ',' %}\n      {% for type in enabled_payment_types %}\n        <li class=\"icon--payment1\">\n          {{ type | payment_type_svg_tag }}\n        </li>\n      {% endfor %}\n    </ul>\n\n    <!-- Trustpilot Logo, \"Fremragende\" Text, and Stars Section -->\n    <div class=\"trustpilot-logo\">\n      <span class=\"trustpilot-text\">Fremragende</span>\n\n      <!-- Clickable 4.5 Stars -->\n      <a href=\"https://dk.trustpilot.com/review/bodyflex.dk\" target=\"_blank\">\n        <img class=\"trustpilot-stars\" src=\"https://cdn.trustpilot.net/brand-assets/4.1.0/stars/stars-4.5.svg\" alt=\"Trustpilot 4.5 stars\">\n      </a>\n\n      <!-- Clickable One-Star Trustpilot Logo -->\n      <a href=\"https://dk.trustpilot.com/review/bodyflex.dk\" target=\"_blank\">\n        <img class=\"trustpilot-one-star\" src=\"https://1000logos.net/wp-content/uploads/2022/10/Trustpilot-Logo-500x281.png\" alt=\"Trustpilot logo\">\n      </a>\n    </div>\n\n    <!-- Description Tabs Section -->\n    <div class=\"description-tabs\">\n      <!-- Your description tabs code goes here -->\n    </div>\n  </div>\n</a>"
+          }
+        },
+        "guarantee_bar_Fw8yxF": {
+          "type": "guarantee_bar",
+          "settings": {
+            "icon_1": "shopify://shop_images/Union.png",
+            "text_1": "2 års fabriksgaranti",
+            "icon_2": "shopify://shop_images/Vector_Stroke.png",
+            "text_2": "Ingen resultater = Pengene tilbage",
+            "icon_3": "shopify://shop_images/track_1.png",
+            "text_3": "Hurtig levering på 1-3 dage"
           }
         },
         "kaching_bundles_app_block_fYWmV6": {
           "type": "shopify://apps/kaching-bundles/blocks/app-block/6c637362-a106-4a32-94ac-94dcfd68cdb8",
           "settings": {
             "product": "{{product}}"
-          }
-        },
-        "custom_liquid_rLjbFx": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<style>\n  /* Styling for the footer section */\n  .footer1-section {\n    display: flex;\n    flex-direction: column;\n    align-items: center; /* Keep the payment icons centered */\n    margin-top: 0px;\n  }\n\n  /* Styling for the payment icons list */\n  .payment-icons1 {\n    list-style-type: none;\n    display: flex;\n    gap: 6px; /* Added gap between payment icons */\n    padding: 0;\n    margin: 0;\n    justify-content: center; /* Keep payment icons centered */\n  }\n\n  /* Styling for Trustpilot section */\n  .trustpilot-logo {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    gap: 6px; /* Space between elements */\n    margin-top: 10px;\n    width: 100%;\n  }\n\n  /* \"Fremragende\" text */\n  .trustpilot-text {\n    font-size: 14px;\n    font-weight: normal;\n    color: black;\n    line-height: 1;\n    text-align: center;\n  }\n\n  /* Trustpilot 4.5 stars */\n  .trustpilot-stars {\n    width: 100px; /* Adjusted size */\n    height: auto;\n    display: block;\n  }\n\n  /* Trustpilot logo */\n  .trustpilot-logo img {\n    display: block;\n    height: auto;\n  }\n\n  /* One-star Trustpilot logo */\n  .trustpilot-one-star {\n    width: 70px; /* Adjusted size */\n  }\n\n  /* Remove underline from the link */\n  a {\n    text-decoration: none;\n  }\n\n  /* Adjustments for smaller screens */\n  @media screen and (max-width: 900px) {\n    .trustpilot-logo {\n      gap: 4px; /* Reduce space between elements */\n    }\n\n    .trustpilot-text {\n      font-size: 12px; /* Smaller text */\n    }\n\n    .trustpilot-stars {\n      width: 90px; /* Smaller stars */\n    }\n\n    .trustpilot-one-star {\n      width: 55px; /* Increased size for mobile */\n    }\n  }\n</style>\n\n<!-- Wrap the entire content in a clickable anchor tag -->\n<a href=\"https://dk.trustpilot.com/review/bodyflex.dk\" target=\"_blank\">\n  <div class=\"footer1-section\">\n    <!-- Payment Icons Section -->\n    <ul class=\"inline-list payment-icons1\">\n      {% assign enabled_payment_types = 'mobilepay,visa,dankort,master,anyday,google_pay,apple_pay,paypal,' | remove: ' ' | split: ',' %}\n      {% for type in enabled_payment_types %}\n        <li class=\"icon--payment1\">\n          {{ type | payment_type_svg_tag }}\n        </li>\n      {% endfor %}\n    </ul>\n\n    <!-- Trustpilot Logo, \"Fremragende\" Text, and Stars Section -->\n    <div class=\"trustpilot-logo\">\n      <span class=\"trustpilot-text\">Fremragende</span>\n\n      <!-- Clickable 4.5 Stars -->\n      <a href=\"https://dk.trustpilot.com/review/bodyflex.dk\" target=\"_blank\">\n        <img class=\"trustpilot-stars\" src=\"https://cdn.trustpilot.net/brand-assets/4.1.0/stars/stars-4.5.svg\" alt=\"Trustpilot 4.5 stars\">\n      </a>\n\n      <!-- Clickable One-Star Trustpilot Logo -->\n      <a href=\"https://dk.trustpilot.com/review/bodyflex.dk\" target=\"_blank\">\n        <img class=\"trustpilot-one-star\" src=\"https://1000logos.net/wp-content/uploads/2022/10/Trustpilot-Logo-500x281.png\" alt=\"Trustpilot logo\">\n      </a>\n    </div>\n\n    <!-- Description Tabs Section -->\n    <div class=\"description-tabs\">\n      <!-- Your description tabs code goes here -->\n    </div>\n  </div>\n</a>"
           }
         },
         "custom_liquid_KLtBKm": {
@@ -93,6 +121,7 @@
         },
         "custom_liquid_TtTTA4": {
           "type": "custom_liquid",
+          "disabled": true,
           "settings": {
             "custom_liquid": "<style>\n  .custom-accordion {\n    width: 100%;\n    border-bottom: 1px solid #ddd;\n    margin-top: 10px;\n  }\n\n  .accordion-item {\n    border-top: 1px solid #ddd;\n  }\n\n  .accordion-header {\n    font-size: 15px;\n    font-weight: 600;\n    padding: 8px 0;\n    cursor: pointer;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    color: #000;\n  }\n\n  .accordion-content {\n    display: none;\n    padding: 6px 0;\n    font-size: 14px !important;\n    color: #444;\n    line-height: 1.4;\n    margin-top: 10px;\n  }\n\n  .accordion-content p {\n    font-size: 14px !important;\n  }\n\n  .accordion-item.active .accordion-content {\n    display: block;\n    margin-top: -20px;\n  }\n\n  .accordion-icon {\n    width: 8px;\n    height: 8px;\n    border-right: 2px solid rgba(0, 0, 0, 0.3);\n    border-bottom: 2px solid rgba(0, 0, 0, 0.3);\n    transform: rotate(45deg);\n    transition: transform 0.3s ease, border-color 0.3s ease;\n  }\n\n  .accordion-header:hover .accordion-icon {\n    border-right-color: rgba(0, 0, 0, 0.5);\n    border-bottom-color: rgba(0, 0, 0, 0.5);\n  }\n\n  .accordion-item.active .accordion-icon {\n    transform: rotate(-135deg);\n    border-right-color: rgba(0, 0, 0, 0.5);\n    border-bottom-color: rgba(0, 0, 0, 0.5);\n  }\n\n  .highlight-text {\n    font-weight: bold;\n    margin-top: 10px; /* Adjusted top margin to match spacing */\n    margin-bottom: 5px;\n    text-align: left;\n    padding: 0;\n    margin-left: 0;\n    font-size: 14px;\n    color: black; /* Text color set to black */\n  }\n</style>\n\n<div class=\"custom-accordion\">\n  <!-- Ny Sektion -->\n  <div class=\"accordion-item\">\n    <div class=\"accordion-header\" onclick=\"toggleAccordion(this)\">\n      Hvad er inkluderet?\n      <span class=\"accordion-icon\"></span>\n    </div>\n    <div class=\"accordion-content\">\n      <p>1 x BodyFlex Pilates Reformer</p>\n      <p>2 x BodyFlex træningselastikker</p>\n      <p>1 x Telefonholder</p>\n      <p>1 x Træningsmåtte</p>\n      <p>1 x Nedtællingsur</p>\n      <p>1 x 12-ugers digital træningsguide og plan </p>\n    </div>\n  </div>\n\n  <!-- Tilfredshedsgaranti -->\n  <div class=\"accordion-item\">\n    <div class=\"accordion-header\" onclick=\"toggleAccordion(this)\">\n      Tilfredshedsgaranti\n      <span class=\"accordion-icon\"></span>\n    </div>\n    <div class=\"accordion-content\">\n      <p>Vi tilbyder 30 dages tilfredshedsgaranti, så du kan prøve vores produkt risikofrit. Hvis du ikke er tilfreds, får du pengene tilbage – nemt og enkelt.</p>\n    </div>\n  </div>\n\n  <!-- Levering -->\n  <div class=\"accordion-item\">\n    <div class=\"accordion-header\" onclick=\"toggleAccordion(this)\">\n      Levering\n      <span class=\"accordion-icon\"></span>\n    </div>\n    <div class=\"accordion-content\">\n      <p>Vi bestræber os på at sende din ordre den samme dag som du bestiller. Derfor kan du forvente at få din pakke inden for 1-3 hverdage.</p>\n    </div>\n  </div>\n</div>\n\n<script>\n  function toggleAccordion(header) {\n    var item = header.parentElement;\n    item.classList.toggle(\"active\");\n  }\n</script>"
           }
@@ -116,6 +145,28 @@
             "content": "<p>Vi bestræber os på at sende din ordre den samme dag som du bestiller. Derfor kan du forvente at få din pakke inden for 1-3 hverdage.</p>",
             "page": ""
           }
+        },
+        "images_block_CBaMjP": {
+          "type": "images_block",
+          "settings": {
+            "heading": "+2000 Kunder Elsker Vores Bodyflex",
+            "image_1": "shopify://shop_images/scroll_image.png",
+            "image_2": "shopify://shop_images/scroll_imgee.png",
+            "image_3": "shopify://shop_images/scroll-image.png",
+            "image_4": "shopify://shop_images/scroll_image_0bb1d1bd-33b6-48e9-ae3f-2639c1ad8239.png",
+            "image_5": "shopify://shop_images/scroll_imgee.png"
+          }
+        },
+        "accordion_block_GXDw48": {
+          "type": "accordion_block",
+          "settings": {
+            "accordion_heading_1": "Hvor lang er leveringstiden?",
+            "accordion_content_1": "<p>1 x BodyFlex Pilates Reformer<br/>2 x BodyFlex træningselastikker<br/>1 x Telefonholder<br/>1 x Træningsmåtte<br/>1 x Nedtællingsur<br/>1 x 12-ugers digital træningsguide og plan</p>",
+            "accordion_heading_2": "Tilfredshedsgaranti",
+            "accordion_content_2": "<p>1 x BodyFlex Pilates Reformer<br/>2 x BodyFlex træningselastikker<br/>1 x Telefonholder<br/>1 x Træningsmåtte<br/>1 x Nedtællingsur<br/>1 x 12-ugers digital træningsguide og plan</p>",
+            "accordion_heading_3": "Levering",
+            "accordion_content_3": "<p>1 x BodyFlex Pilates Reformer<br/>2 x BodyFlex træningselastikker<br/>1 x Telefonholder<br/>1 x Træningsmåtte<br/>1 x Nedtællingsur<br/>1 x 12-ugers digital træningsguide og plan</p>"
+          }
         }
       },
       "block_order": [
@@ -123,25 +174,27 @@
         "title",
         "price",
         "text_dnpFJC",
+        "feature_list_fkyrbG",
         "custom_liquid_9Lw9y6",
-        "variant_picker",
-        "quantity_selector",
-        "custom_liquid_bNJyi9",
-        "buy_buttons",
         "custom_liquid_Mmep7V",
-        "kaching_bundles_app_block_fYWmV6",
+        "variant_picker",
+        "custom_liquid_bNJyi9",
+        "quantity_selector",
+        "buy_buttons",
         "custom_liquid_rLjbFx",
+        "guarantee_bar_Fw8yxF",
+        "kaching_bundles_app_block_fYWmV6",
         "custom_liquid_KLtBKm",
         "custom_liquid_TtTTA4",
         "collapsible_tab_JzaMjT",
-        "collapsible_tab_CpFWWw"
+        "collapsible_tab_CpFWWw",
+        "images_block_CBaMjP",
+        "accordion_block_GXDw48"
       ],
       "custom_css": [
         "h1 {font-size: 26px; font-weight: 500;}",
         "h2 {font-size: 14px;}",
-        ".product__text.inline-richtext {font-size: 13px;}",
-        ".badge.price__badge-sale.color-scheme-4 {background-color: #fafafa; border: 1px solid rgba(26, 26, 26, 0.1); color: #1a1a1a;}",
-        ".price-item.price-item--sale.price-item--last {font-size: 16px; color: #39b54a;}"
+        ".product__text.inline-richtext {font-size: 13px;}"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -149,7 +202,7 @@
         "media_size": "medium",
         "constrain_to_viewport": false,
         "media_fit": "contain",
-        "gallery_layout": "stacked",
+        "gallery_layout": "thumbnail_slider",
         "media_position": "left",
         "image_zoom": "none",
         "mobile_thumbnails": "show",
@@ -975,6 +1028,176 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "custom_testimonial_LtkRN3": {
+      "type": "custom-testimonial",
+      "blocks": {
+        "review_yrn8Gj": {
+          "type": "review",
+          "settings": {
+            "rating": 4,
+            "title": "Fantastisk service og kvalitet!",
+            "content": "Jeg har haft en rigtig god oplevelse med BodyFlex! Lynhurtig levering, og BodyFlex Pilates reformer lever helt op til forventningerne og er super god kvalitet.",
+            "author": "Ismail K."
+          }
+        },
+        "review_4Nqt7d": {
+          "type": "review",
+          "settings": {
+            "rating": 4.5,
+            "title": "Fantastisk service og kvalitet!",
+            "content": "Jeg har haft en rigtig god oplevelse med BodyFlex! Lynhurtig levering, og BodyFlex Pilates reformer lever helt op til forventningerne og er super god kvalitet.",
+            "author": "Ismail K."
+          }
+        },
+        "review_4g4JEe": {
+          "type": "review",
+          "settings": {
+            "rating": 4.5,
+            "title": "Fantastisk service og kvalitet!",
+            "content": "Jeg har haft en rigtig god oplevelse med BodyFlex! Lynhurtig levering, og BodyFlex Pilates reformer lever helt op til forventningerne og er super god kvalitet.",
+            "author": "Ismail K."
+          }
+        },
+        "review_riVFxz": {
+          "type": "review",
+          "settings": {
+            "rating": 4.5,
+            "title": "Fantastisk service og kvalitet!",
+            "content": "Jeg har haft en rigtig god oplevelse med BodyFlex! Lynhurtig levering, og BodyFlex Pilates reformer lever helt op til forventningerne og er super god kvalitet.",
+            "author": "Ismail K."
+          }
+        }
+      },
+      "block_order": [
+        "review_yrn8Gj",
+        "review_4Nqt7d",
+        "review_4g4JEe",
+        "review_riVFxz"
+      ],
+      "name": "Reviews Slider",
+      "settings": {
+        "heading": "Se hvad andre siger om BodyFlex",
+        "average_rating": 4.5
+      }
+    },
+    "custom_reform_section_Q9GtMi": {
+      "type": "custom-reform-section",
+      "blocks": {
+        "stat_JJEpAx": {
+          "type": "stat",
+          "settings": {
+            "percentage": "97%",
+            "description": "tabte to buksestørrelser på 28 dage"
+          }
+        },
+        "stat_KAjNxq": {
+          "type": "stat",
+          "settings": {
+            "percentage": "97%",
+            "description": "tabte to buksestørrelser på 28 dage"
+          }
+        },
+        "stat_4tVFLq": {
+          "type": "stat",
+          "settings": {
+            "percentage": "97%",
+            "description": "tabte to buksestørrelser på 28 dage"
+          }
+        }
+      },
+      "block_order": [
+        "stat_JJEpAx",
+        "stat_KAjNxq",
+        "stat_4tVFLq"
+      ],
+      "name": "Custom Reform Section",
+      "settings": {
+        "heading": "Reformly tager dig videre",
+        "subtext": "Over 10.000 kvinder deltog i vores 28-dages udfordring, og resultaterne taler for sig selv. Vi spurgte vores fællesskab, og her er, hvad de havde at sige:"
+      }
+    },
+    "custom_before_after_slider_CVhnch": {
+      "type": "custom-before-after-slider",
+      "blocks": {
+        "testimonial_BU8yNa": {
+          "type": "testimonial",
+          "settings": {
+            "before_image": "shopify://shop_images/scroll_image_0bb1d1bd-33b6-48e9-ae3f-2639c1ad8239.png",
+            "after_image": "shopify://shop_images/scroll_imgee.png",
+            "slide_heading": "Goal: Lose Weight",
+            "slide_text": "I am really happy. I feel more toned and feel more comfortable in my body, now wearing clothes I didn’t feel comfortable in before.",
+            "author": "Gemma, 39"
+          }
+        },
+        "testimonial_TpiW3g": {
+          "type": "testimonial",
+          "settings": {
+            "before_image": "shopify://shop_images/scroll_image_0bb1d1bd-33b6-48e9-ae3f-2639c1ad8239.png",
+            "after_image": "shopify://shop_images/scroll_imgee.png",
+            "slide_heading": "Goal: Lose Weight",
+            "slide_text": "I am really happy. I feel more toned and feel more comfortable in my body, now wearing clothes I didn’t feel comfortable in before.",
+            "author": "Gemma, 39"
+          }
+        },
+        "testimonial_KfcYDe": {
+          "type": "testimonial",
+          "settings": {
+            "slide_heading": "Goal: Lose Weight",
+            "slide_text": "I am really happy. I feel more toned and feel more comfortable in my body, now wearing clothes I didn’t feel comfortable in before.",
+            "author": "Gemma, 39"
+          }
+        },
+        "testimonial_KxbJxk": {
+          "type": "testimonial",
+          "settings": {
+            "slide_heading": "Goal: Lose Weight",
+            "slide_text": "I am really happy. I feel more toned and feel more comfortable in my body, now wearing clothes I didn’t feel comfortable in before.",
+            "author": "Gemma, 39"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_BU8yNa",
+        "testimonial_TpiW3g",
+        "testimonial_KfcYDe",
+        "testimonial_KxbJxk"
+      ],
+      "name": "Custom Before Slider",
+      "settings": {
+        "heading": "Try it risk-free for 30 days.",
+        "subtext": "If you’re not totally in love with the product and results, we will refund you 100%."
+      }
+    },
+    "custom_video_trio_block_TaENgH": {
+      "type": "custom-video-trio-block",
+      "blocks": {
+        "video_block_6RCMpJ": {
+          "type": "video_block",
+          "settings": {
+            "video_file": "shopify://files/videos/Untitled design (1).mp4"
+          }
+        },
+        "video_block_cHwBPK": {
+          "type": "video_block",
+          "settings": {
+            "video_file": "shopify://files/videos/Bodyflex Produktvideo2 1X1.mp4"
+          }
+        },
+        "video_block_XmELNi": {
+          "type": "video_block",
+          "settings": {
+            "video_file": "shopify://files/videos/Bodyflex_produktvideo2_1x1.mov"
+          }
+        }
+      },
+      "block_order": [
+        "video_block_6RCMpJ",
+        "video_block_cHwBPK",
+        "video_block_XmELNi"
+      ],
+      "name": "Video Trio Block",
+      "settings": {}
     }
   },
   "order": [
@@ -987,6 +1210,10 @@
     "image_with_text_z4fpYn",
     "ss_testimonial_8_LgCC8Y",
     "collapsible_content_TtJcET",
-    "1748205893d130c7a4"
+    "1748205893d130c7a4",
+    "custom_testimonial_LtkRN3",
+    "custom_reform_section_Q9GtMi",
+    "custom_before_after_slider_CVhnch",
+    "custom_video_trio_block_TaENgH"
   ]
 }

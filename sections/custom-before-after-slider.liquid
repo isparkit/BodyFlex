@@ -1,0 +1,294 @@
+{% schema %}
+{
+  "name": "Custom Before Slider",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "Icon Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Try it risk-free for 30 days."
+    },
+    {
+      "type": "textarea",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "If you’re not totally in love with the product and results, we will refund you 100%."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "before_image",
+          "label": "Before Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "after_image",
+          "label": "After Image"
+        },
+        {
+          "type": "text",
+          "id": "slide_heading",
+          "label": "Slide Heading",
+          "default": "Goal: Lose Weight"
+        },
+        {
+          "type": "textarea",
+          "id": "slide_text",
+          "label": "Slide Text",
+          "default": "I am really happy. I feel more toned and feel more comfortable in my body, now wearing clothes I didn’t feel comfortable in before."
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author",
+          "default": "Gemma, 39"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Before Slider",
+      "category": "Custom",
+      "blocks": [
+        { "type": "testimonial" },
+        { "type": "testimonial" },
+        { "type": "testimonial" }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<section class="rf-testimonial-section">
+  <div class="rf-container">
+    <div class="rf-left">
+      {% if section.settings.icon != blank %}
+        <img class="rf-icon" src="{{ section.settings.icon | img_url: '100x' }}" alt="Icon">
+      {% endif %}
+      <h2 class="rf-heading">{{ section.settings.heading }}</h2>
+      <p class="rf-subtext">{{ section.settings.subtext }}</p>
+    </div>
+
+    <div class="rf-right">
+      <div class="swiper rf-swiper">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            <div class="swiper-slide rf-slide">
+              <div class="rf-card">
+                <div class="rf-images">
+                  <div class="rf-img-wrap">
+                    <img src="{{ block.settings.before_image | img_url: '300x' }}" alt="Before">
+                    <span class="rf-label">BEFORE</span>
+                  </div>
+                  <div class="rf-img-wrap">
+                    <img src="{{ block.settings.after_image | img_url: '300x' }}" alt="After">
+                    <span class="rf-label">AFTER</span>
+                  </div>
+                </div>
+                <div class="rf-content">
+                  <h3 class="rf-slide-heading">{{ block.settings.slide_heading }}</h3>
+                  <p class="rf-slide-text">{{ block.settings.slide_text }}</p>
+                  <p class="rf-author">{{ block.settings.author }}</p>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        <!-- Swiper Navigation -->
+        <div class="swiper-button-prev rf-prev"></div>
+        <div class="swiper-button-next rf-next"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+ <!-- Swiper JS & CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(function () {
+      new Swiper(".rf-swiper", {
+        slidesPerView: 1.2,
+        spaceBetween: 20,
+        loop: true,
+        observer: true,
+        observeParents: true,
+        navigation: {
+          nextEl: ".rf-next",
+          prevEl: ".rf-prev"
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 24
+          },
+          1024: {
+            slidesPerView: 3.1,
+            spaceBetween: 30
+          }
+        }
+      });
+    }, 200);
+  });
+</script>
+ 
+
+<style>
+.rf-testimonial-section {
+  padding: 60px 20px;
+  background: #fff;
+}
+
+.rf-container {
+  display: flex;
+  gap: 40px;
+  margin: auto;
+}
+
+.rf-left {
+  width: 30%;
+}
+
+.rf-icon {
+  height: 40px;
+  margin-bottom: 15px;
+}
+
+.rf-heading {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.rf-subtext {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Swiper Container */
+.rf-right {
+  width: 70%;
+}
+
+.rf-swiper {
+  width: 100%;
+  padding-bottom: 50px;
+}
+
+/* Swiper Slide */
+
+.rf-card {
+  background: #fff;
+  border: 1px solid #e1e1e1;
+  border-radius: 10px;
+  padding: 16px;
+  width: 100%;
+  max-width: 330px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.rf-images {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.rf-img-wrap {
+  position: relative;
+  flex: 1;
+}
+
+.rf-img-wrap img {
+  width: 100%;
+  border-radius: 6px;
+  height: auto;
+}
+
+.rf-label {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background: #2d4de0;
+  color: #fff;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.rf-content {
+  text-align: center;
+}
+
+.rf-slide-heading {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.rf-slide-text {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.rf-author {
+  font-weight: bold;
+  font-size: 14px;
+  color: #2d2d2d;
+}
+
+/* Navigation Arrows */
+.rf-prev,
+.rf-next {
+  color: #2d4de0;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .rf-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .rf-left,
+  .rf-right {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .swiper-slide {
+    width: 100%;
+  }
+
+  .rf-card {
+    max-width: 90%;
+  }
+}
+</style>
