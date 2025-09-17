@@ -1094,15 +1094,15 @@
         "stat_KAjNxq": {
           "type": "stat",
           "settings": {
-            "percentage": "97%",
-            "description": "tabte to buksestørrelser på 28 dage"
+            "percentage": "98%",
+            "description": "bruger stadig Reformly efter 28-dages udfordringen"
           }
         },
         "stat_4tVFLq": {
           "type": "stat",
           "settings": {
-            "percentage": "97%",
-            "description": "tabte to buksestørrelser på 28 dage"
+            "percentage": "98%",
+            "description": "føler sig stærkere og mere energiske"
           }
         }
       },
@@ -1198,6 +1198,54 @@
       ],
       "name": "Video Trio Block",
       "settings": {}
+    },
+    "image_with_text_DcdrfD": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_wzaKgB": {
+          "type": "heading",
+          "settings": {
+            "heading": "Hvorfor vælge BodyFlex™?",
+            "heading_size": "h1"
+          }
+        },
+        "text_TrNxPH": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Muskelspændinger og stivhed kan påvirke dit humør, din energi og din livskvalitet. BodyFlex™ er din partner i kampen mod smerter – designet til at løsne spændinger, øge blodcirkulationen og give dig mere bevægelsesfrihed. Oplev en løsning, der virker, hver gang.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_qf9Qim": {
+          "type": "button",
+          "settings": {
+            "button_label": "Få din i dag",
+            "button_link": "#",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_wzaKgB",
+        "text_TrNxPH",
+        "button_qf9Qim"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/bodyflex-image.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -1214,6 +1262,7 @@
     "custom_testimonial_LtkRN3",
     "custom_reform_section_Q9GtMi",
     "custom_before_after_slider_CVhnch",
-    "custom_video_trio_block_TaENgH"
+    "custom_video_trio_block_TaENgH",
+    "image_with_text_DcdrfD"
   ]
 }
